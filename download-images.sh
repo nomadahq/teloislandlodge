@@ -1,34 +1,74 @@
 #!/bin/bash
-# Download TIL images from WordPress into /assets folder
-# Run from your repo root: bash download-images.sh
+# TIL Image Download Script
+# Run from your teloislandlodge repo root: cd ~/teloislandlodge && bash download-images.sh
 
-mkdir -p assets
+mkdir -p assets/philanthropy
 
-echo "Downloading TIL images..."
+echo "=== LODGE PAGE IMAGES ==="
+curl -o assets/lodge-hero.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/Tilo_Lodge_Beachfront.jpg"
+echo "✓ lodge-hero.jpg"
 
-curl -L -o assets/hero.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/Telo_Front_Aerial.jpg"
-curl -L -o assets/lodge-exterior.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/Tilo_Lodge_Beachfront.jpg"
-curl -L -o assets/room-bungalow.jpg "https://pegasuslodges.com/wp-content/uploads/2023/06/9-5.jpg"
-curl -L -o assets/room-lodge.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/Telo_Lodge_Bedroom_Oceanview-1-1024x683.jpg"
-curl -L -o assets/room-triple.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/lodgeoverview.jpg"
-curl -L -o assets/maxs-right.jpg "https://pegasuslodges.com/wp-content/uploads/2018/03/0right.jpg"
-curl -L -o assets/surf-gts.jpg "https://pegasuslodges.com/wp-content/uploads/2018/04/gtsagjs4385.jpg"
-curl -L -o assets/surf-bubble.jpg "https://pegasuslodges.com/wp-content/uploads/2018/03/0bubble.jpg"
-curl -L -o assets/surf-er.jpg "https://pegasuslodges.com/wp-content/uploads/2018/04/er.jpg"
-curl -L -o assets/surf-kindies.jpg "https://pegasuslodges.com/wp-content/uploads/2018/03/0kindies.jpg"
-curl -L -o assets/surf-churches.jpg "https://pegasuslodges.com/wp-content/uploads/2018/03/0left.jpg"
-curl -L -o assets/surf-pinnacles.jpg "https://pegasuslodges.com/wp-content/uploads/2018/03/0pinnies.jpg"
-curl -L -o assets/surf-leba.jpg "https://pegasuslodges.com/wp-content/uploads/2018/03/lebaohmigod.jpg"
-curl -L -o assets/surf-schoolyards.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/schoolies.jpg"
-curl -L -o assets/sup-snorkel.jpg "https://pegasuslodges.com/wp-content/uploads/2018/05/SUP-TIL-1024x683.jpg"
-curl -L -o assets/boat.jpg "https://pegasuslodges.com/wp-content/uploads/2018/04/agjs4337.jpg"
+curl -o assets/lodge-relaxation.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/Telo_Lodge_Relaxation.jpg"
+echo "✓ lodge-relaxation.jpg"
+
+curl -o assets/lodge-night.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/Telo_Lodge_Night.jpg"
+echo "✓ lodge-night.jpg"
+
+curl -o assets/lodge-bedroom.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/Telo_Lodge_Bedroom_Oceanview-1.jpg"
+echo "✓ lodge-bedroom.jpg"
 
 echo ""
-echo "Done. Downloaded $(ls -1 assets/*.jpg 2>/dev/null | wc -l) images to ./assets/"
+echo "=== HISTORY PAGE ==="
+curl -o assets/telo-sunset.jpg "https://pegasuslodges.com/wp-content/uploads/2019/07/Telo-sunsets-PNT17.jpg"
+echo "✓ telo-sunset.jpg"
+
 echo ""
-echo "Still needed (not on WordPress - check Google Drive):"
-echo "  assets/food-kitchen.jpg"
-echo "  assets/fishing-village.jpg"
-echo "  assets/dingo-guide.jpg"
-echo "  assets/sunset-lifestyle.jpg"
-echo "  assets/aerial-travel.jpg"
+echo "=== PHILANTHROPY / COMMUNITY ==="
+curl -o assets/philanthropy/village-overview.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/village3.jpeg"
+curl -o assets/philanthropy/church.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-church.jpeg"
+curl -o assets/philanthropy/convent.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-churchconvent.jpeg"
+curl -o assets/philanthropy/classroom-1.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-classroom2.jpeg"
+curl -o assets/philanthropy/classroom-2.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-classroom.jpeg"
+curl -o assets/philanthropy/classroom-roof.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-classroomroof.jpeg"
+curl -o assets/philanthropy/mama-bella.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-coconutoillady.jpeg"
+curl -o assets/philanthropy/local-enterprise.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-independentbuisness.jpeg"
+curl -o assets/philanthropy/mask-maker.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-masklady.jpeg"
+curl -o assets/philanthropy/kids-crafts.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-masklady2.jpeg"
+curl -o assets/philanthropy/mask-shop.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-masklady3.jpeg"
+curl -o assets/philanthropy/kids-teacher.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-school3.jpeg"
+curl -o assets/philanthropy/kids-happy.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-school2.jpeg"
+curl -o assets/philanthropy/school.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-school.jpeg"
+curl -o assets/philanthropy/kids-playing.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-schoolkids.jpeg"
+curl -o assets/philanthropy/village-houses.jpeg "https://pegasuslodges.com/wp-content/uploads/2019/08/Telo-Island-Lodge-Philanthropy-Sibaranun-Village-village-1.jpeg"
+echo "✓ 16 philanthropy images"
+
+echo ""
+echo "=== DOWNLOADED ==="
+echo "Lodge: $(ls assets/lodge-*.jpg 2>/dev/null | wc -l) images"
+echo "History: $(ls assets/telo-sunset.jpg 2>/dev/null | wc -l) images"
+echo "Philanthropy: $(ls assets/philanthropy/*.jpeg 2>/dev/null | wc -l) images"
+echo "SUP: $(ls assets/sup.jpg 2>/dev/null | wc -l) image (already added)"
+
+echo ""
+echo "=============================================="
+echo "MANUAL STEP REQUIRED - Beaver Builder images"
+echo "=============================================="
+echo ""
+echo "These pages use lazy-loaded images that can't be curled."
+echo "Open EACH page in Chrome → F12 → Console → paste:"
+echo ""
+echo 'document.querySelectorAll("img").forEach(i => { if(i.src && i.src.includes("wp-content")) console.log(i.alt, "→", i.src) });'
+echo 'document.querySelectorAll("[style]").forEach(el => { const s = el.style.backgroundImage; if(s && s.includes("wp-content")) console.log("BG →", s) });'
+echo ""
+echo "PAGE 1: https://pegasuslodges.com/destinations/telo-island-lodge/the-lodge/"
+echo "  Need: dining, massage, fishing, snorkelling, village bike tour photos"
+echo "  Save as: assets/activity-dining.jpg, activity-massage.jpg, etc."
+echo ""
+echo "PAGE 2: https://pegasuslodges.com/destinations/telo-island-lodge/surfboard-rentals/"
+echo "  Need: El Patron, Crowd Killer, Puddle Jumper HP, RNF Redux photos"
+echo "  Save as: assets/board-elpatron.jpg, board-crowdkiller.jpg, etc."
+echo ""
+echo "For each URL found, download with:"
+echo '  curl -o assets/FILENAME.jpg "PASTE_URL_HERE"'
+echo ""
+echo "Then: git add assets/ && git commit -m 'Add all imagery' && git push origin main"
