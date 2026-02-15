@@ -51,7 +51,7 @@ nav.scrolled{background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://pegasuslodges.com/wp-content/uploads/2019/07/thesurf-header-1-1024x683.jpg') center/cover no-repeat}
+.hero-bg{position:absolute;inset:0;background:url('/assets/hero.jpg') center/cover no-repeat}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.8) 100%)}
 .hero-content{position:relative;z-index:2;max-width:800px;padding:0 2rem}
 .hero-content .tag{color:rgba(255,255,255,.5);font-size:.65rem;letter-spacing:.25em;margin-bottom:1.5rem}
@@ -77,7 +77,7 @@ nav.scrolled{background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
 
 /* LODGE SECTION */
 .lodge{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
-.lodge-img{background:url('https://pegasuslodges.com/wp-content/uploads/2019/07/lodgeoverview-1024x683.jpg') center/cover no-repeat}
+.lodge-img{background:url('/assets/lodge-exterior.jpg') center/cover no-repeat}
 .lodge-content{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center;background:var(--white)}
 .lodge-content h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem}
 .lodge-content p{margin-bottom:1rem}
@@ -294,7 +294,7 @@ footer a:hover{color:var(--ember)}
   </div>
   <div class="rooms-grid">
     <div class="room-card rv">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2023/06/9-5.jpg" alt="Overwater bungalow at Telo Island Lodge" loading="lazy">
+      <img src="/assets/room-bungalow.jpg" alt="Overwater bungalow at Telo Island Lodge" loading="lazy">
       <div class="room-card-body">
         <div class="room-card-type">Overwater Bungalow &middot; 2 Rooms</div>
         <h4>Upper &amp; Lower Bungalow</h4>
@@ -302,7 +302,7 @@ footer a:hover{color:var(--ember)}
       </div>
     </div>
     <div class="room-card rv d1">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2019/07/Telo_Lodge_Bedroom_Oceanview-1-1024x683.jpg" alt="Lodge room at Telo Island Lodge" loading="lazy">
+      <img src="/assets/room-lodge.jpg" alt="Lodge room at Telo Island Lodge" loading="lazy">
       <div class="room-card-body">
         <div class="room-card-type">Lodge Room &middot; 2 Rooms</div>
         <h4>Beachfront Lodge Rooms</h4>
@@ -310,7 +310,7 @@ footer a:hover{color:var(--ember)}
       </div>
     </div>
     <div class="room-card rv d2">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2019/07/lodgeoverview-1024x683.jpg" alt="Triple waterfront room at Telo Island Lodge" loading="lazy">
+      <img src="/assets/room-triple.jpg" alt="Triple waterfront room at Telo Island Lodge" loading="lazy">
       <div class="room-card-body">
         <div class="room-card-type">Waterfront Triple &middot; 1 Room</div>
         <h4>The Triple</h4>
@@ -323,7 +323,7 @@ footer a:hover{color:var(--ember)}
 <!-- MAX'S RIGHT — YOUR WAVE -->
 <section class="wave" id="your-wave">
   <div class="wave-img">
-    <img src="https://pegasuslodges.com/wp-content/uploads/2018/03/0right-1024x714.jpg" alt="Max's Right surf break at Telo Island Lodge" loading="lazy">
+    <img src="/assets/maxs-right.jpg" alt="Max's Right surf break at Telo Island Lodge" loading="lazy">
   </div>
   <div class="wave-content">
     <div class="rv">
@@ -345,31 +345,39 @@ footer a:hover{color:var(--ember)}
   </div>
   <div class="gallery-track">
     <div class="gcard">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2018/03/0right-1024x714.jpg" alt="Max's Right" loading="lazy">
+      <img src="/assets/maxs-right.jpg" alt="Max's Right surf break at Telo Island Lodge" loading="lazy">
       <div class="gcard-overlay"><h4>Max's Right</h4><p>Lodge front &middot; Right &middot; All levels</p></div>
     </div>
     <div class="gcard">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2019/07/thesurf-header-1-1024x683.jpg" alt="GT's" loading="lazy">
+      <img src="/assets/surf-gts.jpg" alt="GT's barrel in the Telo Islands" loading="lazy">
       <div class="gcard-overlay"><h4>GT's</h4><p>20 min &middot; Right barrel &middot; Advanced</p></div>
     </div>
     <div class="gcard">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2018/05/SUP-TIL-1024x683.jpg" alt="Jurassic Park" loading="lazy">
-      <div class="gcard-overlay"><h4>Jurassic Park</h4><p>25 min &middot; Left point &middot; Intermediate+</p></div>
+      <img src="/assets/surf-leba.jpg" alt="Le Ba surf break Telo Islands" loading="lazy">
+      <div class="gcard-overlay"><h4>Le Ba</h4><p>15 min &middot; Left barrel &middot; Advanced</p></div>
     </div>
     <div class="gcard">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2019/07/thesurf-header-1-1024x683.jpg" alt="Churches" loading="lazy">
+      <img src="/assets/surf-churches.jpg" alt="Churches left point Telo Islands" loading="lazy">
       <div class="gcard-overlay"><h4>Churches</h4><p>10 min &middot; Long left &middot; All levels</p></div>
     </div>
     <div class="gcard">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2018/03/0right-1024x714.jpg" alt="The Bubble" loading="lazy">
+      <img src="/assets/surf-bubble.jpg" alt="The Bubble right barrel Telo Islands" loading="lazy">
       <div class="gcard-overlay"><h4>The Bubble</h4><p>15 min &middot; Right barrel &middot; Advanced</p></div>
     </div>
     <div class="gcard">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2018/05/SUP-TIL-1024x683.jpg" alt="Indo Belles" loading="lazy">
-      <div class="gcard-overlay"><h4>Indo Belles</h4><p>10 min &middot; Right &middot; Beginner+</p></div>
+      <img src="/assets/surf-kindies.jpg" alt="Kindies surf break Telo Islands" loading="lazy">
+      <div class="gcard-overlay"><h4>Kindy's</h4><p>10 min &middot; Peak &middot; Intermediate+</p></div>
     </div>
     <div class="gcard">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2019/07/lodgeoverview-1024x683.jpg" alt="E.R." loading="lazy">
+      <img src="/assets/surf-schoolyards.jpg" alt="Schoolyards surf break Telo Islands" loading="lazy">
+      <div class="gcard-overlay"><h4>Schoolyards</h4><p>15 min &middot; Swell magnet &middot; All levels</p></div>
+    </div>
+    <div class="gcard">
+      <img src="/assets/surf-pinnacles.jpg" alt="Pinnacles surf break Telo Islands" loading="lazy">
+      <div class="gcard-overlay"><h4>Pinnacles</h4><p>20 min &middot; Cruiser &middot; All levels</p></div>
+    </div>
+    <div class="gcard">
+      <img src="/assets/surf-er.jpg" alt="E.R. surf break Telo Islands" loading="lazy">
       <div class="gcard-overlay"><h4>E.R.</h4><p>15 min &middot; Lefts &amp; Rights &middot; All levels</p></div>
     </div>
   </div>
@@ -384,15 +392,15 @@ footer a:hover{color:var(--ember)}
   </div>
   <div class="exp-grid">
     <div class="exp-card rv">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2018/05/SUP-TIL-1024x683.jpg" alt="Stand up paddleboarding" loading="lazy">
+      <img src="/assets/sup-snorkel.jpg" alt="Stand up paddleboarding" loading="lazy">
       <div class="exp-card-overlay"><h4>SUP &amp; Snorkelling</h4><p>Crystal lagoon, pristine coral</p></div>
     </div>
     <div class="exp-card rv d1">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2019/07/lodgeoverview-1024x683.jpg" alt="The lodge" loading="lazy">
+      <img src="/assets/lodge-exterior.jpg" alt="Lodge dining at Telo Island Lodge" loading="lazy">
       <div class="exp-card-overlay"><h4>The Kitchen</h4><p>All-inclusive Indonesian-inspired cuisine</p></div>
     </div>
     <div class="exp-card rv d2">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2019/07/thesurf-header-1-1024x683.jpg" alt="Fishing" loading="lazy">
+      <img src="/assets/boat.jpg" alt="Fishing and village tours Telo Islands" loading="lazy">
       <div class="exp-card-overlay"><h4>Fishing &amp; Village Tours</h4><p>Mahi Mahi, scooter tours, local culture</p></div>
     </div>
   </div>
@@ -425,7 +433,7 @@ footer a:hover{color:var(--ember)}
   </div>
   <div class="stories-grid">
     <div class="story-card rv">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2019/07/thesurf-header-1-1024x683.jpg" alt="Trip report" loading="lazy">
+      <img src="/assets/surf-gts.jpg" alt="Telo Island Lodge trip report" loading="lazy">
       <div class="story-card-body">
         <div class="story-card-tag">Trip Report</div>
         <h4>Monkey's Wedding: When the Sun Shines and It Rains at the Same Time</h4>
@@ -433,7 +441,7 @@ footer a:hover{color:var(--ember)}
       </div>
     </div>
     <div class="story-card rv d1">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2018/03/0right-1024x714.jpg" alt="Surf guide" loading="lazy">
+      <img src="/assets/surf-leba.jpg" alt="Telo Islands surf guide" loading="lazy">
       <div class="story-card-body">
         <div class="story-card-tag">Surf Guide</div>
         <h4>The Complete Guide to Surfing the Telo Islands</h4>
@@ -441,7 +449,7 @@ footer a:hover{color:var(--ember)}
       </div>
     </div>
     <div class="story-card rv d2">
-      <img src="https://pegasuslodges.com/wp-content/uploads/2018/05/SUP-TIL-1024x683.jpg" alt="Travel guide" loading="lazy">
+      <img src="/assets/hero.jpg" alt="Getting to the Telo Islands travel guide" loading="lazy">
       <div class="story-card-body">
         <div class="story-card-tag">Travel Guide</div>
         <h4>Getting to the Telo Islands: Flights, Charters &amp; What to Pack</h4>
