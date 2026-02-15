@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History &amp; Culture — Telo Island Lodge | The Original Telo Surf Outpost</title>
+<meta name="description" content="The original Telo surf outpost since 2009. Learn about the Telo Islands' location, our history, local Batu Islander culture, and community involvement.">
+<meta name="keywords" content="telo islands history, telo islands location, batu islands indonesia, telo island culture, kepulan batu, telo island lodge story, indonesia surf history">
+<meta property="og:title" content="History & Culture — Telo Island Lodge">
+<meta property="og:description" content="The original Telo surf outpost. Over a decade in the Telo Islands, Indonesia.">
+<link rel="canonical" href="https://teloislandlodge.com/history/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ember:#E8613A;--teal:#0E9AA7;--dark:#0A0A0A;--card:#111;--bone:#F5F0EB;--muted:#888;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Outfit',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.hdg{font-family:'Playfair Display',serif;font-weight:700;line-height:1.1}
+.sub{font-weight:300;line-height:1.7;color:var(--muted)}
+.tag{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:.75rem}
+.tag-e{color:var(--ember)}
+.tag-t{color:var(--teal)}
+.tag-w{color:rgba(255,255,255,.5)}
+.cta{display:inline-block;padding:.9rem 2.4rem;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s}
+.cta-ember{background:var(--ember);color:#fff;border-radius:0}
+.cta-ember:hover{background:#d4532e;transform:translateY(-1px)}
+
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:.02em}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{padding:.5rem 1.4rem;border:1px solid var(--ember);color:var(--ember);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:all .3s}
+.nav-cta:hover{background:var(--ember);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:200}
+.hamburger span{width:24px;height:2px;background:#fff;transition:all .3s}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.98);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+.mob-menu.active{display:flex}
+.mob-menu a{font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;opacity:.8;transition:opacity .3s}
+.mob-menu a:hover{opacity:1}
+
+.hero{position:relative;height:60vh;min-height:400px;display:flex;align-items:flex-end;justify-content:center;padding:0 2rem 4rem;background:url('/assets/aerial-travel.jpg') center/cover no-repeat}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 50%,rgba(0,0,0,.3) 100%)}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:700px}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);color:#fff;margin-bottom:1rem}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.8);font-weight:300;line-height:1.7}
+
+/* SECTIONS */
+.section{padding:5rem 2rem}
+.section-inner{max-width:750px;margin:0 auto}
+.section h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:1.5rem}
+.section p{font-size:1rem;line-height:1.85;color:var(--muted);font-weight:300;margin-bottom:1.2rem}
+.section p:last-child{margin-bottom:0}
+.section-dark{background:var(--dark);color:#fff}
+.section-dark p{color:rgba(255,255,255,.6)}
+.section-bone{background:var(--bone)}
+
+/* MAP CALLOUT */
+.map-callout{background:var(--bone);padding:3rem;max-width:750px;margin:0 auto 2rem;text-align:center}
+.map-callout p{font-size:.95rem;color:var(--muted);font-weight:300;line-height:1.7}
+.map-coords{font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:700;color:var(--ember);margin-bottom:.75rem;letter-spacing:.05em}
+
+/* FULL-WIDTH IMAGE */
+.full-img{width:100%;height:40vh;min-height:280px;object-fit:cover}
+
+.book-cta{padding:5rem 2rem;background:var(--dark);text-align:center}
+.book-cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;margin-bottom:1rem}
+.book-cta p{color:rgba(255,255,255,.6);font-weight:300;margin-bottom:2rem}
+
+footer{padding:3rem 2rem;background:var(--dark);border-top:1px solid rgba(255,255,255,.06);text-align:center}
+footer p{font-size:.8rem;color:rgba(255,255,255,.3);font-weight:300}
+footer a{color:var(--ember);transition:color .3s}
+footer a:hover{color:#fff}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{height:50vh;min-height:300px}
+  .map-callout{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Telo Island Lodge</a>
+  <div class="nav-links">
+    <a href="/the-lodge/">The Lodge</a>
+    <a href="/the-surf/">The Surf</a>
+    <a href="/history/" class="active">History</a>
+    <a href="/#stories">Stories</a>
+    <a href="/availability/" class="nav-cta">Book Now</a>
+  </div>
+  <div class="hamburger" onclick="document.querySelector('.mob-menu').classList.toggle('active')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mob-menu">
+  <a href="/" onclick="this.parentElement.classList.remove('active')">Home</a>
+  <a href="/the-lodge/">The Lodge</a>
+  <a href="/the-surf/">The Surf</a>
+  <a href="/history/">History</a>
+  <a href="/#stories">Stories</a>
+  <a href="/availability/">Book Now</a>
+</div>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="tag tag-w">History &amp; Culture</div>
+    <h1 class="hdg">The Original Telo Surf Outpost</h1>
+    <p>Over a decade on the equator. Trailblazing the Telo Islands since day one.</p>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section">
+  <div class="section-inner">
+    <div class="tag tag-e">Location</div>
+    <h2 class="hdg">Where in the World</h2>
+    <p>Situated off the west coast of Sumatra, almost directly on the equator, Telo Island Lodge is ensconced in an archipelago known as "Kepulan Batu", "Pulau Pulau Batu" or, more simply, the Telo Islands.</p>
+    <p>We are in good company, with the Mentawai Islands to the south and Nias to the north, yet the islands in our group are unlike any in Sumatra — often compared to the dramatic cliff islands of Thailand or the smaller islands of the Seychelles.</p>
+    <p>Due to the remote location — and the fact it can only be accessed conveniently by private aircraft — the Telos remain largely unspoiled by the development seen in many parts of Indonesia.</p>
+  </div>
+</section>
+
+<div class="map-callout">
+  <div class="map-coords">0°26'N &middot; 98°25'E</div>
+  <p>Telo Islands, North Sumatra, Indonesia. Accessible by private charter flight from Padang (~90 minutes).</p>
+</div>
+
+<img src="/assets/fishing-village.jpg" alt="Telo Islands fishing village" class="full-img" loading="lazy">
+
+<!-- HISTORY -->
+<section class="section section-dark">
+  <div class="section-inner">
+    <div class="tag tag-w">Our Story</div>
+    <h2 class="hdg">Fifteen Years in Remote Indonesia</h2>
+    <p>Remote area construction and operation has been part of our lives since the beginning, including our first project — Hinako's Hideaway in the Hinako Islands — which ran for 15 years.</p>
+    <p>Telo Island Lodge is the original Telo surf outpost and has been going strong for well over a decade. We trailblazed the logistical challenges of the area and have been refining our approach constantly.</p>
+    <p>The lodge continues to evolve — with the addition of a dedicated lounge and games bungalow, expanded room options, a professional guide team, and partnerships with brands like …Lost Surfboards. What hasn't changed is the core promise: uncrowded world-class surf, genuine hospitality, and an experience you won't find anywhere else.</p>
+  </div>
+</section>
+
+<img src="/assets/sunset-lodge.jpg" alt="Sunset at Telo Island Lodge" class="full-img" loading="lazy">
+
+<!-- CULTURE -->
+<section class="section section-bone">
+  <div class="section-inner">
+    <div class="tag tag-e">Local Culture</div>
+    <h2 class="hdg">The Batu Islanders</h2>
+    <p>This is a culture strikingly different to western society. Batu Islanders have a distinct, vibrant culture with a mix of Christian, Islamic, and Animist beliefs. Life here — centred around the village — plays out in a sustenance economy based primarily on fishing and coconut farming.</p>
+    <p>Batu Islanders are some of the most friendly, happy, and family-oriented folks you'll ever come across.</p>
+    <p>We strive to be a positive force in the local Indonesian communities. We purchase local building materials and food, favour and employ local labour, and have a long history of involvement with local education projects.</p>
+  </div>
+</section>
+
+<!-- PHILANTHROPY -->
+<section class="section">
+  <div class="section-inner" style="text-align:center">
+    <div class="tag tag-t">Community</div>
+    <h2 class="hdg">Giving Back</h2>
+    <p style="max-width:600px;margin:0 auto 1.5rem">We believe in being part of the communities we operate in — not just alongside them. 100% of guest donations go directly to local village projects including education, infrastructure, and community development.</p>
+    <p style="max-width:600px;margin:0 auto">Please join us in helping our local villages. Every bit makes a difference.</p>
+  </div>
+</section>
+
+<section class="book-cta">
+  <h2 class="hdg">Come See for Yourself</h2>
+  <p>7–10 day all-inclusive trips. March through October 2026.</p>
+  <a href="/availability/" class="cta cta-ember">Check Availability</a>
+</section>
+
+<footer>
+  <p>&copy; 2026 Telo Island Lodge &middot; Telo Islands, Indonesia &middot; <a href="/">Home</a> &middot; <a href="/the-lodge/">Lodge</a> &middot; <a href="/the-surf/">Surf</a> &middot; <a href="/history/">History</a> &middot; <a href="/availability/">Book</a></p>
+</footer>
+
+</body>
+</html>

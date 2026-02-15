@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surfboard Rentals — …Lost Surfboards at Telo Island Lodge</title>
+<meta name="description" content="Rent premium …Lost Surfboards hand-selected by Matt Biolos for the Telo Islands. El Patron, Crowd Killer, Puddle Jumper HP, RNF Redux. $400/trip.">
+<link rel="canonical" href="https://teloislandlodge.com/the-surf/surfboard-rentals/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ember:#E8613A;--teal:#0E9AA7;--dark:#0A0A0A;--card:#111;--bone:#F5F0EB;--muted:#888;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Outfit',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.hdg{font-family:'Playfair Display',serif;font-weight:700;line-height:1.1}
+.sub{font-weight:300;line-height:1.7;color:var(--muted)}
+.tag{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:.75rem}
+.tag-e{color:var(--ember)}
+.tag-w{color:rgba(255,255,255,.5)}
+.cta{display:inline-block;padding:.9rem 2.4rem;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s}
+.cta-ember{background:var(--ember);color:#fff;border-radius:0}
+.cta-ember:hover{background:#d4532e;transform:translateY(-1px)}
+.cta-outline-dark{border:1px solid var(--dark);color:var(--dark);background:transparent;border-radius:0}
+.cta-outline-dark:hover{background:var(--dark);color:#fff}
+
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:.02em}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{padding:.5rem 1.4rem;border:1px solid var(--ember);color:var(--ember);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:all .3s}
+.nav-cta:hover{background:var(--ember);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:200}
+.hamburger span{width:24px;height:2px;background:#fff;transition:all .3s}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.98);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+.mob-menu.active{display:flex}
+.mob-menu a{font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;opacity:.8;transition:opacity .3s}
+.mob-menu a:hover{opacity:1}
+
+.page-header{padding:7rem 2rem 4rem;text-align:center;background:var(--bone)}
+.page-header h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
+.page-header p{max-width:600px;margin:0 auto;font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7}
+
+.pricing{padding:3rem 2rem;text-align:center;background:var(--dark);color:#fff}
+.pricing .price{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--ember)}
+.pricing .price-note{font-size:.85rem;color:rgba(255,255,255,.5);font-weight:300;margin-top:.5rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.6}
+
+.quiver{padding:5rem 2rem;max-width:800px;margin:0 auto}
+.board{margin-bottom:3.5rem;padding-bottom:3.5rem;border-bottom:1px solid #eee}
+.board:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.board-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:.75rem}
+.board-sizes{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin-bottom:1rem}
+.board p{font-size:.95rem;color:var(--muted);font-weight:300;line-height:1.8}
+
+.construction{padding:4rem 2rem;background:var(--bone)}
+.construction-inner{max-width:700px;margin:0 auto;text-align:center}
+.construction h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem}
+.construction p{font-size:.9rem;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:1rem}
+
+.back-link{padding:3rem 2rem;text-align:center}
+
+footer{padding:3rem 2rem;background:var(--dark);border-top:1px solid rgba(255,255,255,.06);text-align:center}
+footer p{font-size:.8rem;color:rgba(255,255,255,.3);font-weight:300}
+footer a{color:var(--ember);transition:color .3s}
+footer a:hover{color:#fff}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Telo Island Lodge</a>
+  <div class="nav-links">
+    <a href="/the-lodge/">The Lodge</a>
+    <a href="/the-surf/" class="active">The Surf</a>
+    <a href="/history/">History</a>
+    <a href="/#stories">Stories</a>
+    <a href="/availability/" class="nav-cta">Book Now</a>
+  </div>
+  <div class="hamburger" onclick="document.querySelector('.mob-menu').classList.toggle('active')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mob-menu">
+  <a href="/" onclick="this.parentElement.classList.remove('active')">Home</a>
+  <a href="/the-lodge/">The Lodge</a>
+  <a href="/the-surf/">The Surf</a>
+  <a href="/history/">History</a>
+  <a href="/availability/">Book Now</a>
+</div>
+
+<section class="page-header">
+  <div class="tag tag-e">Equipment</div>
+  <h1 class="hdg">…Lost Surfboard Rentals</h1>
+  <p>Hand-selected for Telo Island Lodge by Matt Biolos, founder of …Lost Surfboards — and a yearly TIL guest. He knows these waves like few others.</p>
+</section>
+
+<section class="pricing">
+  <div class="price">$400 <span style="font-size:1rem;font-weight:300;color:rgba(255,255,255,.6)">USD / trip</span></div>
+  <p class="price-note">Based on a 10-day trip. Full-trip rental only. $400 security deposit required. Walk-up price at the lodge is $500/trip. Must be booked pre-trip for the $400 rate.</p>
+</section>
+
+<section class="quiver">
+  <div class="tag tag-e" style="text-align:center;display:block;margin-bottom:2rem">2026 Telo Quiver</div>
+
+  <div class="board">
+    <div class="board-name">El Patron</div>
+    <div class="board-sizes">Sizes: 6'6" &middot; 6'8"</div>
+    <p>As the name suggests, this is the big guy's personal surfboard — a contemporary performance shortboard scaled up to be 'properly' ridden, with generous dimensions and age-friendly volume. All the tricks of Matt's considerable trade (low entry rocker, accelerated tail rocker, shallow single concave, slight vee through the fins, flat out the tail, hidden volume under the chest) are in place for a performance board for those of us with a bit of grey in our Telo ten-day growth.</p>
+  </div>
+
+  <div class="board">
+    <div class="board-name">Crowd Killer</div>
+    <div class="board-sizes">Sizes: 6'6" &middot; 6'8" &middot; 6'10"</div>
+    <p>Designed with catching waves in mind while retaining performance properties. The slightly wider nose allows easy entry, and the double bump swallowtail facilitates lively response while riding. Neutral central rocker for glide kicks a little in the tail for whipping wraps like a pro.</p>
+  </div>
+
+  <div class="board">
+    <div class="board-name">Puddle Jumper HP</div>
+    <div class="board-sizes">Sizes: 5'5" &middot; 6'2"</div>
+    <p>A playful board that's easy to paddle and ride. Its smooth lines disguise its significant volume — with built-in speed to spare. The tail, with its foiled rails and deep vee, holds in and gives confidence at high speeds. The overall flat rocker, generous width, and deep central concave generate small wave squirt like nothing else.</p>
+  </div>
+
+  <div class="board">
+    <div class="board-name">RNF Redux</div>
+    <div class="board-sizes">Sizes: 6'3"</div>
+    <p>The RNF (Round Nose Fish) is a design that's been evolving in Matt's hands for 25 years. The Redux model enlivens the classic Fish by means of contemporary flyer/swallowtail properties. Think long hot sessions at the E.R., coming from deep at Max's Left on those in-between days, or setting personal speed records at The Bubble.</p>
+  </div>
+</section>
+
+<section class="construction">
+  <div class="construction-inner">
+    <h3 class="hdg">C4 Construction</h3>
+    <p>All our …Lost Surfboards are C4 construction — light, responsive, with great spring out of turns. The vibration absorption qualities of the cork cancel out that chattery feeling often experienced in lighter epoxy boards.</p>
+    <p>Stringerless EPS/Epoxy construction, thin cork layer laminated into the deck, carbon centreline reinforcement top and bottom, and carbon tail patches.</p>
+  </div>
+</section>
+
+<section class="back-link">
+  <a href="/the-surf/" class="cta cta-outline-dark">&larr; Back to The Surf</a>
+  &nbsp;&nbsp;
+  <a href="/availability/" class="cta cta-ember">Book Your Trip</a>
+</section>
+
+<footer>
+  <p>&copy; 2026 Telo Island Lodge &middot; Telo Islands, Indonesia &middot; <a href="/">Home</a> &middot; <a href="/the-lodge/">Lodge</a> &middot; <a href="/the-surf/">Surf</a> &middot; <a href="/history/">History</a> &middot; <a href="/availability/">Book</a></p>
+</footer>
+
+</body>
+</html>
