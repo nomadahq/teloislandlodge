@@ -3,156 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Surfboard Rentals — …Lost Surfboards at Telo Island Lodge</title>
-<meta name="description" content="Rent premium …Lost Surfboards hand-selected by Matt Biolos for the Telo Islands. El Patron, Crowd Killer, Puddle Jumper HP, RNF Redux. $400/trip.">
+<title>…Lost Surfboard Rentals — Telo Island Lodge</title>
+<meta name="description" content="Rent …Lost Surfboards at Telo Island Lodge. Hand-selected by Matt Biolos. El Patron, Crowd Killer, Puddle Jumper HP, RNF Redux. C4 construction. $400/trip.">
 <link rel="canonical" href="https://teloislandlodge.com/the-surf/surfboard-rentals/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ember:#E8613A;--teal:#0E9AA7;--dark:#0A0A0A;--card:#111;--bone:#F5F0EB;--muted:#888;--white:#fff}
-*{margin:0;padding:0;box-sizing:border-box}
+:root{--ember:#E8613A;--teal:#0E9AA7;--night:#0B0C0F;--charcoal:#141518;--bone:#F5F0EB;--white:#FAFAF8;--muted:#8A8A8A;--gold:#C8A96E;--ff-display:'Playfair Display',Georgia,serif;--ff-body:'DM Sans',-apple-system,sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:'Outfit',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.hdg{font-family:'Playfair Display',serif;font-weight:700;line-height:1.1}
-.sub{font-weight:300;line-height:1.7;color:var(--muted)}
-.tag{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:.75rem}
-.tag-e{color:var(--ember)}
-.tag-w{color:rgba(255,255,255,.5)}
-.cta{display:inline-block;padding:.9rem 2.4rem;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s}
-.cta-ember{background:var(--ember);color:#fff;border-radius:0}
-.cta-ember:hover{background:#d4532e;transform:translateY(-1px)}
-.cta-outline-dark{border:1px solid var(--dark);color:var(--dark);background:transparent;border-radius:0}
-.cta-outline-dark:hover{background:var(--dark);color:#fff}
+body{font-family:var(--ff-body);color:var(--night);background:var(--white);overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:0 clamp(1.5rem,4vw,4rem)}
 
-nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:.02em}
-.nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:color .3s}
-.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-cta{padding:.5rem 1.4rem;border:1px solid var(--ember);color:var(--ember);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:all .3s}
-.nav-cta:hover{background:var(--ember);color:#fff}
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.5rem clamp(1.5rem,4vw,3rem);display:flex;justify-content:space-between;align-items:center;background:rgba(11,12,15,.92);backdrop-filter:blur(20px) saturate(1.5)}
+.nav-logo{font-family:var(--ff-display);font-size:1.05rem;font-weight:600;color:#fff;letter-spacing:.03em}
+.nav-logo img{height:28px;display:inline-block;vertical-align:middle;margin-right:.5rem;opacity:.85}
+.nav-logo span{vertical-align:middle}
+.nav-links{display:flex;gap:2.5rem;align-items:center}
+.nav-links a{font-size:.7rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .3s}
+.nav-links a:hover{color:#fff}
+.nav-cta{padding:.55rem 1.6rem!important;border:1px solid var(--ember)!important;color:var(--ember)!important;font-size:.65rem!important;letter-spacing:.15em;text-transform:uppercase;transition:all .3s}
+.nav-cta:hover{background:var(--ember)!important;color:#fff!important}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:200}
-.hamburger span{width:24px;height:2px;background:#fff;transition:all .3s}
-.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.98);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+.hamburger span{width:22px;height:1.5px;background:#fff}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--night);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem}
 .mob-menu.active{display:flex}
-.mob-menu a{font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;opacity:.8;transition:opacity .3s}
-.mob-menu a:hover{opacity:1}
+.mob-menu a{font-family:var(--ff-display);font-size:2rem;color:#fff;opacity:.7;font-weight:400}
 
-.page-header{padding:7rem 2rem 4rem;text-align:center;background:var(--bone)}
-.page-header h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:1rem}
-.page-header p{max-width:600px;margin:0 auto;font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7}
+.page-header{padding:clamp(8rem,12vw,10rem) 0 clamp(2rem,4vw,3rem);text-align:center;background:var(--night)}
+.page-header .tag{color:var(--ember);font-size:.6rem;letter-spacing:.3em;font-weight:500;text-transform:uppercase;margin-bottom:1.5rem;display:block}
+.page-header h1{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3rem);color:#fff;font-weight:500;margin-bottom:1rem}
+.page-header p{color:rgba(255,255,255,.4);font-weight:300;max-width:550px;margin:0 auto;line-height:1.8;font-size:.95rem}
 
-.pricing{padding:3rem 2rem;text-align:center;background:var(--dark);color:#fff}
-.pricing .price{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--ember)}
-.pricing .price-note{font-size:.85rem;color:rgba(255,255,255,.5);font-weight:300;margin-top:.5rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.6}
+.pricing-bar{background:var(--charcoal);padding:1.5rem 0;text-align:center;border-bottom:1px solid rgba(255,255,255,.06)}
+.pricing-bar span{color:rgba(255,255,255,.5);font-size:.85rem;font-weight:300}
+.pricing-bar strong{color:var(--ember);font-weight:600}
 
-.quiver{padding:5rem 2rem;max-width:800px;margin:0 auto}
-.board{margin-bottom:3.5rem;padding-bottom:3.5rem;border-bottom:1px solid #eee}
-.board:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.board-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:.75rem}
-.board-sizes{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin-bottom:1rem}
-.board p{font-size:.95rem;color:var(--muted);font-weight:300;line-height:1.8}
+.boards{padding:clamp(4rem,8vw,6rem) 0;background:var(--bone)}
+.board-card{display:grid;grid-template-columns:300px 1fr;gap:clamp(2rem,4vw,3rem);align-items:center;padding:2.5rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.board-card:first-child{padding-top:0}
+.board-card:last-child{border-bottom:none;padding-bottom:0}
+.board-img{aspect-ratio:3/4;overflow:hidden;background:var(--white)}
+.board-img img{width:100%;height:100%;object-fit:cover}
+.board-text h3{font-family:var(--ff-display);font-size:1.4rem;font-weight:500;margin-bottom:.8rem}
+.board-text .board-type{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.board-text p{font-size:.92rem;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:.5rem}
 
-.construction{padding:4rem 2rem;background:var(--bone)}
-.construction-inner{max-width:700px;margin:0 auto;text-align:center}
-.construction h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem}
-.construction p{font-size:.9rem;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:1rem}
+.fine-print{padding:clamp(3rem,5vw,4rem) 0;background:var(--white);text-align:center}
+.fine-print p{font-size:.85rem;color:var(--muted);font-weight:300;line-height:1.8;max-width:650px;margin:0 auto}
 
-.back-link{padding:3rem 2rem;text-align:center}
+.cta-section{padding:clamp(4rem,7vw,5rem) 0;background:var(--night);text-align:center}
+.cta-section h2{font-family:var(--ff-display);font-size:clamp(1.5rem,2.5vw,2rem);color:#fff;margin-bottom:1rem;font-weight:500}
+.cta-section p{color:rgba(255,255,255,.4);font-weight:300;max-width:400px;margin:0 auto 2rem;line-height:1.8;font-size:.9rem}
+.cta{display:inline-flex;padding:1rem 2.6rem;font-family:var(--ff-body);font-size:.75rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;transition:all .4s}
+.cta-ember{background:var(--ember);color:#fff}
+.cta-ember:hover{background:#d4532e}
 
-footer{padding:3rem 2rem;background:var(--dark);border-top:1px solid rgba(255,255,255,.06);text-align:center}
-footer p{font-size:.8rem;color:rgba(255,255,255,.3);font-weight:300}
-footer a{color:var(--ember);transition:color .3s}
-footer a:hover{color:#fff}
+footer{padding:3.5rem 0;background:#050506}
+.footer-inner{text-align:center}
+.footer-links{margin-bottom:1rem}
+.footer-links a{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin:0 .8rem;transition:color .3s}
+.footer-links a:hover{color:var(--ember)}
+.footer-copy{font-size:.65rem;color:rgba(255,255,255,.15);line-height:1.8}
+.footer-copy a{color:rgba(255,255,255,.25)}
 
-@media(max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
+@media(max-width:900px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .board-card{grid-template-columns:1fr}
+  .board-img{max-width:300px}
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="/">Telo Island Lodge</a>
+<nav id="nav">
+  <a href="/" class="nav-logo"><img src="/assets/til-icon.png" alt="TIL"><span>Telo Island Lodge</span></a>
   <div class="nav-links">
-    <a href="/the-lodge/">The Lodge</a>
-    <a href="/the-surf/" class="active">The Surf</a>
-    <a href="/history/">History</a>
-    <a href="/#stories">Stories</a>
+    <a href="/the-lodge/">The Lodge</a><a href="/the-surf/">The Surf</a><a href="/history/">History</a><a href="/community/">Community</a>
     <a href="/availability/" class="nav-cta">Book Now</a>
   </div>
-  <div class="hamburger" onclick="document.querySelector('.mob-menu').classList.toggle('active')">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="hamburger" onclick="document.querySelector('.mob-menu').classList.toggle('active')"><span></span><span></span><span></span></div>
 </nav>
-<div class="mob-menu">
-  <a href="/" onclick="this.parentElement.classList.remove('active')">Home</a>
-  <a href="/the-lodge/">The Lodge</a>
-  <a href="/the-surf/">The Surf</a>
-  <a href="/history/">History</a>
-  <a href="/availability/">Book Now</a>
+<div class="mob-menu"><a href="/the-lodge/" onclick="this.parentElement.classList.remove('active')">The Lodge</a><a href="/the-surf/" onclick="this.parentElement.classList.remove('active')">The Surf</a><a href="/history/" onclick="this.parentElement.classList.remove('active')">History</a><a href="/community/" onclick="this.parentElement.classList.remove('active')">Community</a><a href="/availability/" onclick="this.parentElement.classList.remove('active')" style="color:var(--ember)">Book Now</a></div>
+
+<div class="page-header">
+  <span class="tag">…Lost Surfboards</span>
+  <h1>Board Rentals</h1>
+  <p>Hand-selected by Matt Biolos — founder of …Lost Surfboards and yearly TIL guest. Built with C4 construction for Indo reef conditions.</p>
 </div>
 
-<section class="page-header">
-  <div class="tag tag-e">Equipment</div>
-  <h1 class="hdg">…Lost Surfboard Rentals</h1>
-  <p>Hand-selected for Telo Island Lodge by Matt Biolos, founder of …Lost Surfboards — and a yearly TIL guest. He knows these waves like few others.</p>
-</section>
+<div class="pricing-bar">
+  <span>Full-trip rental: <strong>$400 USD</strong> &middot; Pre-book to guarantee availability &middot; <strong>$500</strong> if booked at the lodge</span>
+</div>
 
-<section class="pricing">
-  <div class="price">$400 <span style="font-size:1rem;font-weight:300;color:rgba(255,255,255,.6)">USD / trip</span></div>
-  <p class="price-note">Based on a 10-day trip. Full-trip rental only. $400 security deposit required. Walk-up price at the lodge is $500/trip. Must be booked pre-trip for the $400 rate.</p>
-</section>
-
-<section class="quiver">
-  <div class="tag tag-e" style="text-align:center;display:block;margin-bottom:2rem">2026 Telo Quiver</div>
-
-  <div class="board">
-    <div class="board-name">El Patron</div>
-    <div class="board-sizes">Sizes: 6'6" &middot; 6'8"</div>
-    <p>As the name suggests, this is the big guy's personal surfboard — a contemporary performance shortboard scaled up to be 'properly' ridden, with generous dimensions and age-friendly volume. All the tricks of Matt's considerable trade (low entry rocker, accelerated tail rocker, shallow single concave, slight vee through the fins, flat out the tail, hidden volume under the chest) are in place for a performance board for those of us with a bit of grey in our Telo ten-day growth.</p>
-  </div>
-
-  <div class="board">
-    <div class="board-name">Crowd Killer</div>
-    <div class="board-sizes">Sizes: 6'6" &middot; 6'8" &middot; 6'10"</div>
-    <p>Designed with catching waves in mind while retaining performance properties. The slightly wider nose allows easy entry, and the double bump swallowtail facilitates lively response while riding. Neutral central rocker for glide kicks a little in the tail for whipping wraps like a pro.</p>
-  </div>
-
-  <div class="board">
-    <div class="board-name">Puddle Jumper HP</div>
-    <div class="board-sizes">Sizes: 5'5" &middot; 6'2"</div>
-    <p>A playful board that's easy to paddle and ride. Its smooth lines disguise its significant volume — with built-in speed to spare. The tail, with its foiled rails and deep vee, holds in and gives confidence at high speeds. The overall flat rocker, generous width, and deep central concave generate small wave squirt like nothing else.</p>
-  </div>
-
-  <div class="board">
-    <div class="board-name">RNF Redux</div>
-    <div class="board-sizes">Sizes: 6'3"</div>
-    <p>The RNF (Round Nose Fish) is a design that's been evolving in Matt's hands for 25 years. The Redux model enlivens the classic Fish by means of contemporary flyer/swallowtail properties. Think long hot sessions at the E.R., coming from deep at Max's Left on those in-between days, or setting personal speed records at The Bubble.</p>
-  </div>
-</section>
-
-<section class="construction">
-  <div class="construction-inner">
-    <h3 class="hdg">C4 Construction</h3>
-    <p>All our …Lost Surfboards are C4 construction — light, responsive, with great spring out of turns. The vibration absorption qualities of the cork cancel out that chattery feeling often experienced in lighter epoxy boards.</p>
-    <p>Stringerless EPS/Epoxy construction, thin cork layer laminated into the deck, carbon centreline reinforcement top and bottom, and carbon tail patches.</p>
+<section class="boards">
+  <div class="container">
+    <div class="board-card">
+      <div class="board-img"><img src="/assets/boards/el-patron.jpg" alt="El Patron" loading="lazy"></div>
+      <div class="board-text">
+        <span class="board-type">Performance Shortboard</span>
+        <h3>El Patron</h3>
+        <p>Matt Biolos' personal board — a contemporary performance shortboard scaled up for properly-proportioned adults. Low entry rocker, accelerated tail rocker, shallow single concave, slight vee through the fins, flat out the tail. Hidden volume under the chest for a performance board with age-friendly dimensions.</p>
+      </div>
+    </div>
+    <div class="board-card">
+      <div class="board-img"><img src="/assets/boards/crowd-killer.jpg" alt="Crowd Killer" loading="lazy"></div>
+      <div class="board-text">
+        <span class="board-type">Step-Up</span>
+        <h3>Crowd Killer</h3>
+        <p>When the swell picks up and you need something with more paddle power and hold. The Crowd Killer bridges the gap between your everyday shortboard and a full step-up gun. Extra length and volume where you need it, refined rail for control in bigger surf.</p>
+      </div>
+    </div>
+    <div class="board-card">
+      <div class="board-img"><img src="/assets/boards/puddle-jumper-hp.jpg" alt="Puddle Jumper HP" loading="lazy"></div>
+      <div class="board-text">
+        <span class="board-type">Small Wave Performance</span>
+        <h3>Puddle Jumper HP</h3>
+        <p>For those mellower days when the swell drops. Wide point forward for easy entry, performance rocker keeps it lively on the wave face. Extra volume without the sluggishness — surprisingly responsive for a board this user-friendly.</p>
+      </div>
+    </div>
+    <div class="board-card">
+      <div class="board-img"><img src="/assets/boards/rnf-redux.jpg" alt="RNF Redux" loading="lazy"></div>
+      <div class="board-text">
+        <span class="board-type">All-Rounder</span>
+        <h3>RNF Redux</h3>
+        <p>The Swiss Army knife. Round nose fish outline with modern rocker and fin placement. Covers the widest range of conditions — from knee-high fun waves to solid overhead days. If you're only renting one board, this is probably the one.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="back-link">
-  <a href="/the-surf/" class="cta cta-outline-dark">&larr; Back to The Surf</a>
-  &nbsp;&nbsp;
-  <a href="/availability/" class="cta cta-ember">Book Your Trip</a>
+<div class="fine-print">
+  <p>Price is based on a full-trip rental. A $400 USD security deposit is also required. All boards are C4 construction — lighter, stronger, and more responsive than standard PU/PE. Surfboard rentals must be booked on a full-trip basis and are subject to availability.</p>
+</div>
+
+<section class="cta-section">
+  <h2>Add Boards to Your Trip</h2>
+  <p>Mention board rentals when you book and we'll have your quiver waiting.</p>
+  <a href="/availability/" class="cta cta-ember">Check Availability</a>
 </section>
 
 <footer>
-  <p>&copy; 2026 Telo Island Lodge &middot; Telo Islands, Indonesia &middot; <a href="/">Home</a> &middot; <a href="/the-lodge/">Lodge</a> &middot; <a href="/the-surf/">Surf</a> &middot; <a href="/history/">History</a> &middot; <a href="/availability/">Book</a></p>
+  <div class="footer-inner container">
+    <div class="footer-links"><a href="/the-lodge/">The Lodge</a><a href="/the-surf/">Surf</a><a href="/history/">History</a><a href="/community/">Community</a><a href="/availability/">Book</a></div>
+    <p class="footer-copy">&copy; 2026 Telo Island Lodge &middot; Telo Islands, North Sumatra, Indonesia<br>A <a href="https://pegasuslodges.com" target="_blank">Pegasus Lodges</a> property</p>
+  </div>
 </footer>
-
 </body>
 </html>

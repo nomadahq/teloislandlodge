@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>History &amp; Culture — Telo Island Lodge | Since 2009</title>
-<meta name="description" content="The story of Telo Island Lodge: Indonesia's original surf outpost in the Telo Islands, North Sumatra. Operating since 2009. A Pegasus Lodges property.">
-<link rel="canonical" href="https://teloislandlodge.com/history/">
+<title>Community — Sibaranun Village | Telo Island Lodge</title>
+<meta name="description" content="Telo Island Lodge's community work with Sibaranun Village in the Telo Islands. Supporting education, local enterprise, and cultural preservation since 2009.">
+<link rel="canonical" href="https://teloislandlodge.com/community/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -35,14 +35,15 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.5rem clamp(1.5r
 .mob-menu.active{display:flex}
 .mob-menu a{font-family:var(--ff-display);font-size:2rem;color:#fff;opacity:.7;font-weight:400}
 
-.page-hero{position:relative;height:70vh;min-height:500px;display:flex;align-items:flex-end;justify-content:center;padding:0 2rem 4rem;background:url('/assets/hero.jpg') center/cover no-repeat}
+.page-hero{position:relative;height:70vh;min-height:500px;display:flex;align-items:flex-end;justify-content:center;padding:0 2rem 4rem;background:url('/assets/village/village-overview.jpeg') center/cover no-repeat}
 .page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,12,15,.75) 0%,rgba(11,12,15,.15) 50%,rgba(11,12,15,.3) 100%)}
 .hero-inner{position:relative;z-index:2;text-align:center;max-width:700px}
 .hero-inner .tag{color:var(--gold);margin-bottom:1.5rem;display:block}
 .hero-inner h1{font-family:var(--ff-display);font-size:clamp(2.2rem,5vw,3.8rem);color:#fff;font-weight:500;margin-bottom:1rem}
 .hero-inner p{color:rgba(255,255,255,.5);font-weight:300;line-height:1.8;font-size:1rem}
 
-.editorial{display:grid;grid-template-columns:1fr 1fr;min-height:70vh}
+/* EDITORIAL */
+.editorial{display:grid;grid-template-columns:1fr 1fr;min-height:65vh}
 .editorial-img{position:relative;overflow:hidden}
 .editorial-img img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease-out}
 .editorial-img:hover img{transform:scale(1.03)}
@@ -57,14 +58,14 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.5rem clamp(1.5r
 .editorial.flip .editorial-img{order:2}
 .editorial.flip .editorial-body{order:1}
 
-/* QUOTE */
-.quote-section{padding:clamp(4rem,7vw,6rem) 0;background:var(--bone);text-align:center}
-.quote-section blockquote{font-family:var(--ff-display);font-size:clamp(1.2rem,2.5vw,1.8rem);font-style:italic;max-width:700px;margin:0 auto 1.5rem;line-height:1.6;color:var(--night)}
-.quote-section cite{font-family:var(--ff-body);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-style:normal}
+/* PHOTO GRID */
+.photo-grid{padding:clamp(3rem,6vw,5rem) 0;background:var(--bone)}
+.photo-grid-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.4rem,.8vw,.6rem);max-width:1280px;margin:0 auto;padding:0 clamp(1.5rem,4vw,4rem)}
+.photo-grid-inner img{width:100%;height:200px;object-fit:cover}
 
 .cta-section{padding:clamp(4rem,7vw,5rem) 0;background:var(--night);text-align:center}
 .cta-section h2{font-family:var(--ff-display);font-size:clamp(1.5rem,2.5vw,2rem);color:#fff;margin-bottom:1rem;font-weight:500}
-.cta-section p{color:rgba(255,255,255,.4);font-weight:300;max-width:400px;margin:0 auto 2rem;line-height:1.8;font-size:.9rem}
+.cta-section p{color:rgba(255,255,255,.4);font-weight:300;max-width:450px;margin:0 auto 2rem;line-height:1.8;font-size:.9rem}
 .cta{display:inline-flex;padding:1rem 2.6rem;font-family:var(--ff-body);font-size:.75rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;transition:all .4s}
 .cta-ember{background:var(--ember);color:#fff}
 .cta-ember:hover{background:#d4532e}
@@ -84,9 +85,10 @@ footer{padding:3.5rem 0;background:#050506}
 @media(max-width:900px){
   .nav-links{display:none}.hamburger{display:flex}
   .editorial{grid-template-columns:1fr}
-  .editorial-img{min-height:50vh}
+  .editorial-img{min-height:45vh}
   .editorial.flip .editorial-img{order:0}
   .editorial.flip .editorial-body{order:0}
+  .photo-grid-inner{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -104,74 +106,81 @@ footer{padding:3.5rem 0;background:#050506}
 
 <section class="page-hero">
   <div class="hero-inner">
-    <span class="tag">Est. 2009</span>
-    <h1>Our Story</h1>
-    <p>Indonesia's original Telo surf outpost. Fifteen years of putting people in the water of their lives.</p>
+    <span class="tag">Community</span>
+    <h1>Sibaranun Village</h1>
+    <p>We're not just visitors on these islands. Fifteen years of partnership with the community that calls the Telos home.</p>
   </div>
 </section>
 
-<!-- LOCATION -->
+<!-- THE VILLAGE -->
 <section class="editorial">
   <div class="editorial-img rv">
-    <img src="/assets/aerial-travel.jpg" alt="Telo Islands aerial view" loading="lazy">
+    <img src="/assets/village/church.jpeg" alt="Sibaranun Village church" loading="lazy">
   </div>
   <div class="editorial-body rv d1">
-    <div class="tag" style="color:var(--gold)">Location</div>
-    <h2 class="hdg">The Telo Islands</h2>
-    <p class="body-text">The Telo (sometimes "Tello") archipelago sits 130km off the west coast of North Sumatra, Indonesia — a chain of 47 islands scattered across the Indian Ocean. It's remote. Genuinely remote. The only way in is a private charter flight from Padang.</p>
-    <p class="body-text">That remoteness is the point. While the Mentawais saw an explosion of boat traffic and crowded lineups, the Telos remained largely untouched — partly because of the distance, partly because the right people were looking after it.</p>
+    <div class="tag" style="color:var(--gold)">The Village</div>
+    <h2 class="hdg">Our Neighbours</h2>
+    <p class="body-text">Sibaranun Village sits on the island adjacent to the lodge — a small, tight-knit community of Indonesian families who live a largely traditional lifestyle of fishing, farming, and navigating the same waters our speedboats cross daily.</p>
+    <p class="body-text">The lodge employs local staff from the village, creating reliable income in a remote area where economic opportunity is limited. Over the years, these working relationships have become genuine friendships.</p>
   </div>
 </section>
 
-<!-- ORIGIN -->
+<!-- EDUCATION -->
 <section class="editorial dark flip">
   <div class="editorial-body rv">
-    <div class="tag" style="color:var(--ember)">Origin</div>
-    <h2 class="hdg">How It Started</h2>
-    <p class="body-text" style="color:rgba(255,255,255,.45)">Telo Island Lodge was established in 2009 as a small, purpose-built surf operation on the island of Sibaranun. The founders had one idea: create the best possible platform for accessing the Telo Islands' uncrowded waves, without the discomfort of a boat charter or the crowds of the Mentawais.</p>
-    <p class="body-text" style="color:rgba(255,255,255,.45)">What started as a simple lodge with a few rooms and a speedboat has grown into one of Indonesia's most respected surf resorts — but the ethos hasn't changed. Small groups. Local crew. Maximum time in the water.</p>
+    <div class="tag" style="color:var(--teal)">Education</div>
+    <h2 class="hdg">The School</h2>
+    <p class="body-text" style="color:rgba(255,255,255,.45)">Education infrastructure on remote Indonesian islands is limited. Pegasus Lodges has contributed to classroom construction, roofing, and learning materials at the Sibaranun school. The kids are bright, enthusiastic, and always excited when guests visit on the village bike tour.</p>
+    <p class="body-text" style="color:rgba(255,255,255,.45)">It's one of the most memorable parts of any trip — not the waves, but the 30 kids sprinting alongside your scooter, laughing and waving.</p>
   </div>
   <div class="editorial-img rv d1">
-    <img src="/assets/lodge-hero.jpg" alt="Telo Island Lodge original" loading="lazy">
+    <img src="/assets/village/kids-happy.jpeg" alt="Sibaranun Village children" loading="lazy">
   </div>
 </section>
 
-<!-- QUOTE -->
-<section class="quote-section rv">
-  <blockquote>"What makes the Lodge magic is the fact that it is like staying at a mate's place who lives in paradise, can cook gourmet food, lets you leave your mess everywhere and shows you where the best surf is."</blockquote>
-  <cite>Returning Guest</cite>
-</section>
-
-<!-- CULTURE -->
+<!-- ENTERPRISE -->
 <section class="editorial">
   <div class="editorial-img rv">
-    <img src="/assets/telo-sunset.jpg" alt="Telo sunset" loading="lazy">
+    <img src="/assets/village/mask-maker.jpeg" alt="Local mask maker" loading="lazy">
   </div>
   <div class="editorial-body rv d1">
-    <div class="tag" style="color:var(--gold)">Culture</div>
-    <h2 class="hdg">Island Life</h2>
-    <p class="body-text">The Telo Islands are home to a small, tight-knit community of Indonesian families who live a largely traditional lifestyle — fishing, farming, and navigating the same waters our speedboats cross daily.</p>
-    <p class="body-text">We're not just visitors here. The lodge employs local staff, supports the village school and church in Sibaranun, and has built lasting relationships with the community over 15+ years. When you take the village bike tour, you'll see it firsthand — the smiles, the waves, the kids running alongside your scooter.</p>
-    <a href="/community/" style="color:var(--ember);font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;margin-top:1rem;display:inline-block">Our Community Work →</a>
+    <div class="tag" style="color:var(--gold)">Local Enterprise</div>
+    <h2 class="hdg">Mama Bella &amp; the Artisans</h2>
+    <p class="body-text">The village has a tradition of woodcarving and mask-making that goes back generations. Mama Bella runs a small workshop and shop where guests can see traditional masks being carved and purchase them directly from the makers.</p>
+    <p class="body-text">Supporting local enterprise is one of the most sustainable forms of community development. When guests buy a mask or carving, the money goes directly into the village economy — no middlemen, no markup.</p>
   </div>
 </section>
 
-<!-- PEGASUS -->
+<!-- PHOTO GRID -->
+<section class="photo-grid rv">
+  <div class="photo-grid-inner">
+    <img src="/assets/village/kids-teacher.jpeg" alt="Village teacher" loading="lazy">
+    <img src="/assets/village/classroom-1.jpeg" alt="Village classroom" loading="lazy">
+    <img src="/assets/village/village-houses.jpeg" alt="Village houses" loading="lazy">
+    <img src="/assets/village/kids-crafts.jpeg" alt="Kids crafts" loading="lazy">
+    <img src="/assets/village/mask-shop.jpeg" alt="Mask shop" loading="lazy">
+    <img src="/assets/village/mama-bella.jpeg" alt="Mama Bella" loading="lazy">
+    <img src="/assets/village/school.jpeg" alt="Village school" loading="lazy">
+    <img src="/assets/village/kids-playing.jpeg" alt="Kids playing" loading="lazy">
+  </div>
+</section>
+
+<!-- ONGOING -->
 <section class="editorial dark flip">
   <div class="editorial-body rv">
-    <div class="tag" style="color:var(--teal)">Pegasus Lodges</div>
-    <h2 class="hdg">The Team Behind TIL</h2>
-    <p class="body-text" style="color:rgba(255,255,255,.45)">Telo Island Lodge is owned and operated by Pegasus Lodges — a boutique hospitality company specializing in surf travel experiences in remote locations. With over 15 years of operations across Indonesia and the Pacific, Pegasus brings institutional knowledge to what might otherwise be a logistically challenging destination.</p>
-    <p class="body-text" style="color:rgba(255,255,255,.45)">The result: you get the intimacy of a friend's private island with the reliability of a professional operation. Flights land on time, boats are maintained, meals are consistent, and safety is never an afterthought.</p>
+    <div class="tag" style="color:var(--ember)">Ongoing</div>
+    <h2 class="hdg">Not a Project. A Partnership.</h2>
+    <p class="body-text" style="color:rgba(255,255,255,.45)">This isn't a one-off corporate social responsibility exercise. It's 15 years of showing up, employing people, supporting the school, buying local produce, and being genuine neighbours.</p>
+    <p class="body-text" style="color:rgba(255,255,255,.45)">Every guest who visits the village, buys a carving, or simply waves at the kids is part of a relationship that benefits both sides. You get an unforgettable cultural experience. They get economic participation in the tourism that happens on their doorstep.</p>
   </div>
   <div class="editorial-img rv d1">
-    <img src="/assets/lodge-night.jpg" alt="Telo Island Lodge at night" loading="lazy">
+    <img src="/assets/village/village-palms.jpeg" alt="Sibaranun Village" loading="lazy">
   </div>
 </section>
 
 <section class="cta-section">
-  <h2 class="hdg">Write Your Own Chapter</h2>
-  <p>Fifteen years of stories. Thousands of waves. Your trip is next.</p>
+  <h2 class="hdg">Experience It Yourself</h2>
+  <p>The village bike tour is a highlight of every trip. Come see why.</p>
   <a href="/availability/" class="cta cta-ember">Check Availability</a>
 </section>
 

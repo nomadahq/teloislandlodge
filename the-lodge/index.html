@@ -3,320 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Lodge — Telo Island Lodge | All-Inclusive Surf Resort</title>
-<meta name="description" content="Five private rooms, world-class dining, massage, fishing, snorkelling, SUP, and village tours. All-inclusive luxury surf lodge in the Telo Islands, Indonesia.">
-<meta name="keywords" content="telo island lodge accommodation, telo island resort, indonesia surf lodge rooms, telo island dining, luxury surf resort indonesia">
-<meta property="og:title" content="The Lodge — Telo Island Lodge">
-<meta property="og:description" content="Five rooms, nine guests. All-inclusive dining, massage, fishing, snorkelling, SUP, and more. Telo Islands, Indonesia.">
+<title>The Lodge — Telo Island Lodge | Luxury Surf Resort Indonesia</title>
+<meta name="description" content="Telo Island Lodge: 5 private rooms, all-inclusive dining by Chef Restu, full-service bar, massage, fishing, snorkelling, SUP, and village tours. Maximum 9 guests.">
 <link rel="canonical" href="https://teloislandlodge.com/the-lodge/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ember:#E8613A;--teal:#0E9AA7;--dark:#0A0A0A;--card:#111;--bone:#F5F0EB;--muted:#888;--white:#fff}
-*{margin:0;padding:0;box-sizing:border-box}
+:root{--ember:#E8613A;--teal:#0E9AA7;--night:#0B0C0F;--charcoal:#141518;--bone:#F5F0EB;--white:#FAFAF8;--muted:#8A8A8A;--gold:#C8A96E;--ff-display:'Playfair Display',Georgia,serif;--ff-body:'DM Sans',-apple-system,sans-serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:'Outfit',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.hdg{font-family:'Playfair Display',serif;font-weight:700;line-height:1.1}
-.sub{font-weight:300;line-height:1.7;color:var(--muted)}
-.tag{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;display:inline-block;margin-bottom:.75rem}
-.tag-e{color:var(--ember)}
-.tag-t{color:var(--teal)}
-.tag-w{color:rgba(255,255,255,.5)}
-.cta{display:inline-block;padding:.9rem 2.4rem;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s}
-.cta-ember{background:var(--ember);color:#fff;border-radius:0}
-.cta-ember:hover{background:#d4532e;transform:translateY(-1px)}
-.cta-outline{border:1px solid rgba(255,255,255,.3);color:#fff;background:transparent;border-radius:0}
-.cta-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+body{font-family:var(--ff-body);color:var(--night);background:var(--white);overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+.container{max-width:1280px;margin:0 auto;padding:0 clamp(1.5rem,4vw,4rem)}
+.tag{font-family:var(--ff-body);font-size:.65rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;display:inline-block}
+.hdg{font-family:var(--ff-display);font-weight:500;line-height:1.08}
+.body-text{font-weight:300;line-height:1.85;color:var(--muted);font-size:.95rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2.6rem;font-family:var(--ff-body);font-size:.75rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;transition:all .4s cubic-bezier(.2,.8,.2,1)}
+.cta-ember{background:var(--ember);color:#fff}
+.cta-ember:hover{background:#d4532e;transform:translateY(-2px);box-shadow:0 8px 30px rgba(232,97,58,.3)}
 
-nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.95);backdrop-filter:blur(8px)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:.02em}
-.nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:color .3s}
-.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-cta{padding:.5rem 1.4rem;border:1px solid var(--ember);color:var(--ember);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:all .3s}
-.nav-cta:hover{background:var(--ember);color:#fff}
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.5rem clamp(1.5rem,4vw,3rem);display:flex;justify-content:space-between;align-items:center;background:rgba(11,12,15,.92);backdrop-filter:blur(20px) saturate(1.5)}
+.nav-logo{font-family:var(--ff-display);font-size:1.05rem;font-weight:600;color:#fff;letter-spacing:.03em}
+.nav-links{display:flex;gap:2.5rem;align-items:center}
+.nav-links a{font-size:.7rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .3s}
+.nav-links a:hover{color:#fff}
+.nav-cta{padding:.55rem 1.6rem!important;border:1px solid var(--ember)!important;color:var(--ember)!important;font-size:.65rem!important;letter-spacing:.15em;text-transform:uppercase;transition:all .3s}
+.nav-cta:hover{background:var(--ember)!important;color:#fff!important}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:200}
-.hamburger span{width:24px;height:2px;background:#fff;transition:all .3s}
-.mob-menu{display:none;position:fixed;inset:0;background:rgba(10,10,10,.98);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+.hamburger span{width:22px;height:1.5px;background:#fff}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--night);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem}
 .mob-menu.active{display:flex}
-.mob-menu a{font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;opacity:.8;transition:opacity .3s}
-.mob-menu a:hover{opacity:1}
+.mob-menu a{font-family:var(--ff-display);font-size:2rem;color:#fff;opacity:.7;font-weight:400}
 
 /* HERO */
-.hero{position:relative;height:60vh;min-height:400px;display:flex;align-items:flex-end;justify-content:center;padding:0 2rem 4rem;background:url('/assets/lodge-hero.jpg') center/cover no-repeat}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 50%,rgba(0,0,0,.3) 100%)}
-.hero-content{position:relative;z-index:2;text-align:center;max-width:700px}
-.hero h1{font-size:clamp(2rem,5vw,3.5rem);color:#fff;margin-bottom:1rem}
-.hero p{font-size:1.05rem;color:rgba(255,255,255,.8);font-weight:300;line-height:1.7}
+.page-hero{position:relative;height:70vh;min-height:500px;display:flex;align-items:flex-end;justify-content:center;padding:0 2rem 4rem;background:url('/assets/lodge-hero.jpg') center/cover no-repeat}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,12,15,.75) 0%,rgba(11,12,15,.15) 50%,rgba(11,12,15,.3) 100%)}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:700px}
+.hero-inner .tag{color:var(--gold);margin-bottom:1.5rem}
+.hero-inner h1{font-family:var(--ff-display);font-size:clamp(2.2rem,5vw,3.8rem);color:#fff;font-weight:500;margin-bottom:1rem}
+.hero-inner p{color:rgba(255,255,255,.5);font-weight:300;line-height:1.8;font-size:1rem}
 
-/* SANCTUARY */
-.sanctuary{padding:5rem 2rem;max-width:800px;margin:0 auto;text-align:center}
-.sanctuary h2{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:1.5rem}
-.sanctuary p{font-size:1rem;line-height:1.8;color:var(--muted);font-weight:300;margin-bottom:1rem}
-
-/* AMENITIES BAR */
-.amenities{padding:3rem 2rem;background:var(--dark);color:#fff}
-.amenities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:900px;margin:0 auto;text-align:center}
-.amenity{padding:1.5rem 1rem}
-.amenity-icon{font-size:1.8rem;margin-bottom:.75rem}
-.amenity h4{font-size:.9rem;font-weight:600;margin-bottom:.4rem}
-.amenity p{font-size:.8rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.5}
+/* EDITORIAL SPLIT */
+.editorial{display:grid;grid-template-columns:1fr 1fr;min-height:70vh}
+.editorial-img{position:relative;overflow:hidden}
+.editorial-img img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease-out}
+.editorial-img:hover img{transform:scale(1.03)}
+.editorial-body{display:flex;flex-direction:column;justify-content:center;padding:clamp(3rem,6vw,5rem) clamp(2rem,5vw,4rem)}
+.editorial-body .tag{color:var(--gold);margin-bottom:1.5rem}
+.editorial-body h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1.5rem}
+.editorial-body p{margin-bottom:1rem}
+.editorial.dark{background:var(--charcoal)}
+.editorial.dark .editorial-body{color:#fff}
+.editorial.dark h2{color:#fff}
+.editorial.dark p{color:rgba(255,255,255,.45)}
+.editorial.flip .editorial-img{order:2}
+.editorial.flip .editorial-body{order:1}
 
 /* ROOMS */
-.rooms{padding:5rem 2rem;background:var(--bone)}
-.rooms-header{text-align:center;max-width:600px;margin:0 auto 3rem}
+.rooms{padding:clamp(4rem,8vw,7rem) 0;background:var(--bone)}
+.rooms-header{text-align:center;max-width:580px;margin:0 auto clamp(2.5rem,4vw,3.5rem);padding:0 2rem}
 .rooms-header h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}
-.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
-.room-card{background:#fff;overflow:hidden;transition:transform .3s}
-.room-card:hover{transform:translateY(-4px)}
-.room-card img{width:100%;height:250px;object-fit:cover}
-.room-card-body{padding:1.5rem}
-.room-card-type{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ember);margin-bottom:.5rem}
-.room-card-body h4{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:.75rem}
-.room-card-body p{font-size:.88rem;color:var(--muted);font-weight:300;line-height:1.7}
+.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.5rem);padding:0 clamp(1.5rem,4vw,4rem);max-width:1280px;margin:0 auto}
+.room-card{background:var(--white);overflow:hidden}
+.room-card img{width:100%;height:280px;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.room-card:hover img{transform:scale(1.04)}
+.room-card-body{padding:1.8rem 1.5rem}
+.room-card-type{font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.room-card-body h4{font-family:var(--ff-display);font-size:1.15rem;margin-bottom:.8rem;font-weight:500}
+.room-card-body p{font-size:.88rem;color:var(--muted);font-weight:300;line-height:1.75}
 
-/* FEATURE SECTIONS */
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:400px}
-.feature:nth-child(even){direction:rtl}
-.feature:nth-child(even)>*{direction:ltr}
-.feature-img{width:100%;height:100%;object-fit:cover;min-height:400px}
-.feature-content{padding:3rem;display:flex;flex-direction:column;justify-content:center}
-.feature-content h3{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:1rem}
-.feature-content p{font-size:.95rem;color:var(--muted);font-weight:300;line-height:1.8;margin-bottom:1rem}
-.feature-content p:last-child{margin-bottom:0}
-.feature-dark{background:var(--dark)}
-.feature-dark .feature-content{color:#fff}
-.feature-dark .feature-content p{color:rgba(255,255,255,.6)}
-.feature-bone{background:var(--bone)}
-.feature-white{background:#fff}
+/* AMENITIES BAR */
+.amenities{padding:2.5rem 0;background:var(--night);display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(1.5rem,4vw,4rem)}
+.amenity{text-align:center}
+.amenity-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.3rem}
+.amenity-val{font-family:var(--ff-display);font-size:1.1rem;color:var(--ember);font-weight:500}
 
-/* BOOK CTA */
-.book-cta{padding:5rem 2rem;background:var(--dark);text-align:center}
-.book-cta h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);color:#fff;margin-bottom:1rem}
-.book-cta p{color:rgba(255,255,255,.6);font-weight:300;margin-bottom:2rem}
+/* CTA SECTION */
+.cta-section{padding:clamp(4rem,8vw,6rem) 0;background:var(--charcoal);text-align:center}
+.cta-section h2{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;margin-bottom:1rem;font-weight:500}
+.cta-section p{color:rgba(255,255,255,.4);font-weight:300;max-width:450px;margin:0 auto 2rem;line-height:1.8;font-size:.95rem}
 
-footer{padding:3rem 2rem;background:var(--dark);border-top:1px solid rgba(255,255,255,.06);text-align:center}
-footer p{font-size:.8rem;color:rgba(255,255,255,.3);font-weight:300}
-footer a{color:var(--ember);transition:color .3s}
-footer a:hover{color:#fff}
+/* FOOTER */
+footer{padding:3.5rem 0;background:#050506}
+.footer-inner{text-align:center}
+.footer-links{margin-bottom:1rem}
+.footer-links a{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);transition:color .3s;margin:0 .8rem}
+.footer-links a:hover{color:var(--ember)}
+.footer-copy{font-size:.65rem;color:rgba(255,255,255,.15);line-height:1.8}
+.footer-copy a{color:rgba(255,255,255,.25)}
 
-@media(max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}
+
+@media(max-width:900px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .editorial{grid-template-columns:1fr}
+  .editorial-img{min-height:50vh}
+  .editorial.flip .editorial-img{order:0}
+  .editorial.flip .editorial-body{order:0}
   .rooms-grid{grid-template-columns:1fr}
-  .feature,.feature:nth-child(even){grid-template-columns:1fr;direction:ltr}
-  .feature:nth-child(even)>*{direction:ltr}
-  .feature-img{min-height:250px}
-  .feature-content{padding:2rem 1.5rem}
-  .hero{height:50vh;min-height:300px}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="/">Telo Island Lodge</a>
+<nav id="nav">
+  <a href="/" class="nav-logo"><img src="/assets/til-icon.png" alt="TIL" style="height:28px;display:inline-block;vertical-align:middle;margin-right:.5rem;opacity:.85"><span style="vertical-align:middle">Telo Island Lodge</span></a>
   <div class="nav-links">
-    <a href="/the-lodge/" class="active">The Lodge</a>
+    <a href="/the-lodge/">The Lodge</a>
     <a href="/the-surf/">The Surf</a>
     <a href="/history/">History</a>
-    <a href="/#stories">Stories</a>
+    <a href="/community/">Community</a>
     <a href="/availability/" class="nav-cta">Book Now</a>
   </div>
-  <div class="hamburger" onclick="document.querySelector('.mob-menu').classList.toggle('active')">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="hamburger" onclick="document.querySelector('.mob-menu').classList.toggle('active')"><span></span><span></span><span></span></div>
 </nav>
 <div class="mob-menu">
-  <a href="/" onclick="this.parentElement.classList.remove('active')">Home</a>
-  <a href="/the-lodge/">The Lodge</a>
-  <a href="/the-surf/">The Surf</a>
-  <a href="/history/">History</a>
-  <a href="/#stories">Stories</a>
-  <a href="/availability/">Book Now</a>
+  <a href="/the-lodge/" onclick="this.parentElement.classList.remove('active')">The Lodge</a>
+  <a href="/the-surf/" onclick="this.parentElement.classList.remove('active')">The Surf</a>
+  <a href="/history/" onclick="this.parentElement.classList.remove('active')">History</a>
+  <a href="/community/" onclick="this.parentElement.classList.remove('active')">Community</a>
+  <a href="/availability/" onclick="this.parentElement.classList.remove('active')" style="color:var(--ember)">Book Now</a>
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="tag tag-w">The Lodge</div>
-    <h1 class="hdg">Your Sanctuary in the Telos</h1>
-    <p>Supremely comfortable, deeply functional, and surrounded by the Indian Ocean. Five rooms. Nine guests. Everything you need, nothing you don't.</p>
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="tag">The Lodge</div>
+    <h1>Your Sanctuary</h1>
+    <p>Supremely comfortable. Perfectly functional. Every aspect designed around the rhythm of your days — surfing, eating, recovering, repeat.</p>
   </div>
 </section>
 
-<!-- SANCTUARY INTRO -->
-<section class="sanctuary">
-  <h2 class="hdg">Built for Surfers. Refined for Everyone.</h2>
-  <p>Every aspect of Telo Island Lodge is designed around the rhythm of a perfect surf trip — early mornings, long sessions, incredible meals, and evenings spent swapping stories at the bar.</p>
-  <p>Our bar and lounge is the epicentre of good vibes in the Telos. Coffees and catch-ups in the morning, recharging after lunch, beers and hilarity in the evening. Our repeat guests would agree — this is where the magic happens.</p>
-</section>
-
-<!-- AMENITIES -->
-<section class="amenities">
-  <div class="amenities-grid">
-    <div class="amenity">
-      <div class="amenity-icon">🛏</div>
-      <h4>5 Private Rooms</h4>
-      <p>King beds, A/C, ensuite, daily housekeeping, complimentary laundry</p>
-    </div>
-    <div class="amenity">
-      <div class="amenity-icon">🍽</div>
-      <h4>All-Inclusive Dining</h4>
-      <p>Three meals daily. Fresh, healthy, spectacular. Dietary needs accommodated</p>
-    </div>
-    <div class="amenity">
-      <div class="amenity-icon">🍺</div>
-      <h4>Full-Service Bar</h4>
-      <p>Cold beers, cocktails, spirits. Alcoholic beverages available for purchase</p>
-    </div>
-    <div class="amenity">
-      <div class="amenity-icon">💆</div>
-      <h4>Massage</h4>
-      <p>On-site masseuse specialising in getting surfers back in working order</p>
-    </div>
-    <div class="amenity">
-      <div class="amenity-icon">🎯</div>
-      <h4>Games Room</h4>
-      <p>Lounge, TV, table tennis & darts. For surfers with energy to burn</p>
-    </div>
-    <div class="amenity">
-      <div class="amenity-icon">🏄</div>
-      <h4>Board Rentals</h4>
-      <p>…Lost Surfboards quiver. $400/trip, selected by Matt Biolos</p>
-    </div>
-  </div>
-</section>
+<!-- AMENITIES BAR -->
+<div class="amenities">
+  <div class="amenity"><div class="amenity-val">5</div><div class="amenity-label">Private Rooms</div></div>
+  <div class="amenity"><div class="amenity-val">9</div><div class="amenity-label">Max Guests</div></div>
+  <div class="amenity"><div class="amenity-val">A/C</div><div class="amenity-label">All Rooms</div></div>
+  <div class="amenity"><div class="amenity-val">2×</div><div class="amenity-label">Daily Service</div></div>
+  <div class="amenity"><div class="amenity-val">King</div><div class="amenity-label">Size Beds</div></div>
+  <div class="amenity"><div class="amenity-val">24/7</div><div class="amenity-label">WiFi</div></div>
+</div>
 
 <!-- ROOMS -->
 <section class="rooms">
-  <div class="rooms-header">
-    <div class="tag tag-e">Accommodation</div>
+  <div class="rooms-header rv">
+    <div class="tag" style="color:var(--gold)">Accommodation</div>
     <h2 class="hdg">Five Rooms. Nine Guests.</h2>
-    <p class="sub">All rooms are double occupancy with ensuite bathrooms, A/C, and king-size beds. Rooms are assigned by our team — want a room to yourself? Just ask about our single supplement.</p>
+    <p class="body-text">Double occupancy. Ensuite. King-size beds. Daily housekeeping with complimentary laundry. Rooms assigned by our team — want one to yourself? Ask about our single supplement.</p>
   </div>
   <div class="rooms-grid">
-    <div class="room-card">
+    <div class="room-card rv">
       <img src="/assets/room-bungalow.jpg" alt="Overwater bungalow" loading="lazy">
       <div class="room-card-body">
         <div class="room-card-type">Overwater Bungalow &middot; 2 Rooms</div>
         <h4>Upper &amp; Lower Bungalow</h4>
-        <p>The legendary overwater bungalow — two rooms stacked above the reef. Wake to the ocean beneath you. Upper floor catches the breeze, lower floor is steps from the water.</p>
+        <p>Two rooms stacked above the reef. Wake to the ocean beneath you. Upper catches the breeze, lower is steps from the water.</p>
       </div>
     </div>
-    <div class="room-card">
-      <img src="/assets/room-lodge.jpg" alt="Lodge room" loading="lazy">
+    <div class="room-card rv d1">
+      <img src="/assets/room-lodge.jpg" alt="Beachfront lodge room" loading="lazy">
       <div class="room-card-body">
         <div class="room-card-type">Lodge Room &middot; 2 Rooms</div>
-        <h4>Beachfront Lodge Rooms</h4>
-        <p>In the main lodge building, steps from the ocean. You're in the heart of everything — the kitchen, the bar, the deck, and Max's Right breaking out front.</p>
+        <h4>Beachfront Lodge</h4>
+        <p>Heart of everything — the kitchen, the bar, the deck, and Max's Right breaking out front.</p>
       </div>
     </div>
-    <div class="room-card">
-      <img src="/assets/room-triple.jpg" alt="Triple room" loading="lazy">
+    <div class="room-card rv d1">
+      <img src="/assets/room-triple.jpg" alt="Waterfront triple room" loading="lazy">
       <div class="room-card-body">
         <div class="room-card-type">Waterfront Triple &middot; 1 Room</div>
         <h4>The Triple</h4>
-        <p>Right on the water, our largest room sleeps three. Perfect for friends travelling together or families. Front-row seats to the Indian Ocean.</p>
+        <p>Our largest room, right on the water. Sleeps three — perfect for friends or families.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- DINING -->
-<div class="feature feature-white">
-  <img src="/assets/food-kitchen.jpg" alt="Dining at Telo Island Lodge" class="feature-img" loading="lazy">
-  <div class="feature-content">
-    <div class="tag tag-e">All-Inclusive</div>
-    <h3>Dining</h3>
-    <p>The food at Telo Island Lodge is spectacular. Meals are all-inclusive and provide fresh, healthy, hearty nourishment to keep you paddling back out for more.</p>
-    <p>Our Chef, Restu, has his suite of unique signature dishes at the ready. He and his staff accommodate dietary requirements and preferences — which we'll check in with you about prior to arrival.</p>
-    <p>Meals vary between buffet and table service, shared in the company of other guests. Dine in the dining room or one of the al fresco areas. And let's not get started on dessert.</p>
+<section class="editorial">
+  <div class="editorial-img rv">
+    <img src="/assets/food-kitchen.jpg" alt="Chef Restu's kitchen at Telo Island Lodge" loading="lazy">
   </div>
-</div>
+  <div class="editorial-body rv d1">
+    <div class="tag" style="color:var(--gold)">Dining</div>
+    <h2 class="hdg">Chef Restu's Kitchen</h2>
+    <p class="body-text">The food at Telo Island Lodge is spectacular. All-inclusive meals feature fresh, healthy nourishment — seafood pulled from the ocean that morning, tropical fruits, and dishes that fuse Indonesian tradition with western favourites.</p>
+    <p class="body-text">Meals vary between buffet and table service. Dietary requirements accommodated with advance notice. And let's not get started on dessert.</p>
+  </div>
+</section>
 
 <!-- MASSAGE -->
-<div class="feature feature-dark">
-  <img src="/assets/sunset-lodge.jpg" alt="Relaxation at Telo Island Lodge" class="feature-img" loading="lazy">
-  <div class="feature-content">
-    <div class="tag tag-w">Recovery</div>
-    <h3>Massage</h3>
-    <p>Our Telo Island Lodge masseuse could write a book on how to coax surfers' arms, shoulders and spines back into working order.</p>
-    <p>Whether a long-time massage lover or newcomer, you'll want to plan on including a massage as part of your trip. After two sessions a day in the water, your body will thank you.</p>
+<section class="editorial dark flip">
+  <div class="editorial-body rv">
+    <div class="tag" style="color:var(--teal)">Recovery</div>
+    <h2 class="hdg">Massage &amp; Restoration</h2>
+    <p class="body-text" style="color:rgba(255,255,255,.45)">Our masseuse could write a book on coaxing surfers' arms, shoulders and spines back into working order. Whether a long-time massage lover or newcomer, you'll want to plan on including this as part of your trip.</p>
   </div>
-</div>
+  <div class="editorial-img rv d1">
+    <img src="/assets/lodge-relaxation.jpg" alt="Massage and relaxation at Telo Island Lodge" loading="lazy">
+  </div>
+</section>
 
 <!-- FISHING -->
-<div class="feature feature-bone">
-  <img src="/assets/fishing-village.jpg" alt="Fishing at Telo Island Lodge" class="feature-img" loading="lazy">
-  <div class="feature-content">
-    <div class="tag tag-e">Activities</div>
-    <h3>Fishing</h3>
-    <p>Head out for a fishing mission on a slow afternoon, cold beverage in hand. Our guides and staff are enthusiastic anglers who'll take care of the messy side of things for you.</p>
-    <p>If you haven't feasted on a Mahi Mahi you caught only hours earlier while being complimented by your fellow surfers at dinnertime, then you haven't experienced true happiness.</p>
+<section class="editorial">
+  <div class="editorial-img rv">
+    <img src="/assets/fishing-village.jpg" alt="Fishing at Telo Island Lodge" loading="lazy">
   </div>
-</div>
-
-<!-- SNORKELLING -->
-<div class="feature feature-dark">
-  <img src="/assets/sup-snorkel.jpg" alt="Snorkelling at Telo Island Lodge" class="feature-img" loading="lazy">
-  <div class="feature-content">
-    <div class="tag tag-w">Activities</div>
-    <h3>Snorkelling</h3>
-    <p>Picture this. You're anchored at the E.R. on a glassy small day. You've had a dozen waves under your belt and are waiting for the crew to finish.</p>
-    <p>You grab a snorkel set (always available), roll overboard, and go lose yourself in a tropical aquarium for half an hour. The visibility, the robust reef ecosystem, and a roster of curious fish darting around everywhere. Sublime stuff.</p>
+  <div class="editorial-body rv d1">
+    <div class="tag" style="color:var(--gold)">Adventure</div>
+    <h2 class="hdg">Fishing</h2>
+    <p class="body-text">Head out for a fishin' mission on a slow afternoon, cold beverage in hand. Our guides and staff are enthusiastic anglers who'll take care of the messy side of things for you.</p>
+    <p class="body-text">If you haven't feasted on a Mahi Mahi you caught only hours earlier while being complimented by fellow appreciative surfers at dinnertime, then you haven't experienced true happiness.</p>
   </div>
-</div>
+</section>
 
 <!-- SUP -->
-<div class="feature feature-white">
-  <img src="/assets/sup.jpg" alt="Stand up paddling at Telo Island Lodge" class="feature-img" loading="lazy">
-  <div class="feature-content">
-    <div class="tag tag-e">Activities</div>
-    <h3>Stand Up Paddle</h3>
-    <p>SUP veteran or not, by the end of your trip you'll be proudly paddling the lagoon in full view of your comrades, exclaiming over the full-body workout benefits.</p>
-    <p>Put simply, stand up paddling is fun for everyone. Race around the island, anyone?</p>
+<section class="editorial dark flip">
+  <div class="editorial-body rv">
+    <div class="tag" style="color:var(--teal)">On the Water</div>
+    <h2 class="hdg">Stand Up Paddle &amp; Snorkelling</h2>
+    <p class="body-text" style="color:rgba(255,255,255,.45)">SUP veteran or no, by the end of your trip you'll be proudly paddling the lagoon in full view of your comrades. The E.R. reef offers world-class snorkelling — robust ecosystem, curious fish darting everywhere. Sublime stuff.</p>
   </div>
-</div>
+  <div class="editorial-img rv d1">
+    <img src="/assets/sup.jpg" alt="Stand up paddleboarding at Telo Island Lodge" loading="lazy">
+  </div>
+</section>
 
 <!-- VILLAGE TOUR -->
-<div class="feature feature-bone">
-  <img src="/assets/fishing-village.jpg" alt="Telo Village bike tour" class="feature-img" loading="lazy">
-  <div class="feature-content">
-    <div class="tag tag-e">Culture</div>
-    <h3>Telo Village Bike Tour</h3>
-    <p>A time-honoured tradition among Telo Lodge regulars. Know what it's like when a bad-ass motorcycle gang rolls into town? The rumble? The leather? The ambivalent handlebar moustaches?</p>
-    <p>Well, this is nothing like that. Picture a few dorky middle-aged westerners (that's you) on small hire motorbikes and scooters, in loose formation, laughing, smiling, and waving g'day to the locals — who are laughing and smiling right back.</p>
-    <p>A fun way to interact with the nearby village, get a taste of the local culture, and get any mid-life desire to own a Harley Davidson out of your system.</p>
+<section class="editorial">
+  <div class="editorial-img rv">
+    <img src="/assets/sunset-lodge.jpg" alt="Telo village bike tour" loading="lazy">
   </div>
-</div>
+  <div class="editorial-body rv d1">
+    <div class="tag" style="color:var(--gold)">Culture</div>
+    <h2 class="hdg">Telo Village Bike Tour</h2>
+    <p class="body-text">A time-honoured tradition among regulars. Picture a few dorky middle-aged westerners on small hire scooters, in loose formation, laughing, smiling, and waving g'day to the locals — who are laughing and smiling right back.</p>
+    <p class="body-text">A fun way to interact with the nearby village, get a taste of local culture, and get any mid-life desire to own a Harley out of your system.</p>
+  </div>
+</section>
 
 <!-- BOARD RENTALS CTA -->
-<div class="feature feature-dark">
-  <img src="/assets/surf-bubble.jpg" alt="Lost Surfboards at Telo Island Lodge" class="feature-img" loading="lazy">
-  <div class="feature-content">
-    <div class="tag tag-w">Equipment</div>
-    <h3>…Lost Surfboard Rentals</h3>
-    <p>Prefer to leave your boards at home? We've got you covered. Want to bring your board but try out some different shapes and sizes? We've got you covered.</p>
-    <p>Telo Lodge is equipped with a comprehensive quiver of …Lost Surfboards for you to rent. Hand-selected by Matt Biolos himself.</p>
-    <p style="margin-top:.5rem"><a href="/the-surf/surfboard-rentals/" class="cta cta-ember" style="font-size:.75rem;padding:.7rem 1.8rem">View the Quiver — $400/Trip</a></p>
+<section class="editorial dark flip">
+  <div class="editorial-body rv">
+    <div class="tag" style="color:var(--ember)">…Lost Surfboards</div>
+    <h2 class="hdg">Board Rentals</h2>
+    <p class="body-text" style="color:rgba(255,255,255,.45)">Prefer to leave your boards at home? We've got you covered. A comprehensive quiver of …Lost Surfboards hand-selected by Matt Biolos himself — $400/trip.</p>
+    <a href="/the-surf/surfboard-rentals/" class="cta cta-ember" style="margin-top:1rem">View the Quiver</a>
   </div>
-</div>
+  <div class="editorial-img rv d1">
+    <img src="/assets/surf-bubble.jpg" alt="Lost surfboards at Telo Island Lodge" loading="lazy">
+  </div>
+</section>
 
-<!-- BOOK CTA -->
-<section class="book-cta">
-  <h2 class="hdg">Your Room is Waiting</h2>
-  <p>7–10 day all-inclusive trips. March through October 2026.</p>
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="hdg">Ready to Experience It?</h2>
+  <p>Limited to 9 guests per trip. We sell out — book early to secure your dates.</p>
   <a href="/availability/" class="cta cta-ember">Check Availability</a>
 </section>
 
 <footer>
-  <p>&copy; 2026 Telo Island Lodge &middot; Telo Islands, Indonesia &middot; <a href="/">Home</a> &middot; <a href="/the-lodge/">Lodge</a> &middot; <a href="/the-surf/">Surf</a> &middot; <a href="/history/">History</a> &middot; <a href="/availability/">Book</a></p>
+  <div class="footer-inner container">
+    <div class="footer-links">
+      <a href="/the-lodge/">The Lodge</a>
+      <a href="/the-surf/">Surf</a>
+      <a href="/history/">History</a>
+      <a href="/community/">Community</a>
+      <a href="/availability/">Book</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Telo Island Lodge &middot; Telo Islands, North Sumatra, Indonesia<br>A <a href="https://pegasuslodges.com" target="_blank">Pegasus Lodges</a> property</p>
+  </div>
 </footer>
 
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('vis')})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
