@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIL Concierge — Staging</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{font-family:'DM Sans',-apple-system,sans-serif;background:#0B0C0F;color:#E6EDF3}
+
+.staging-bar{position:fixed;top:0;left:0;right:0;z-index:10000;padding:.5rem 1.5rem;background:#D29922;color:#0B0C0F;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:center;display:flex;justify-content:space-between;align-items:center}
+.staging-bar span{opacity:.7;font-weight:400;text-transform:none;letter-spacing:0}
+
+.chat-container{position:fixed;top:36px;left:0;right:0;bottom:0;display:flex;flex-direction:column;max-width:600px;margin:0 auto;background:#0B0C0F}
+
+.chat-header{padding:1.2rem 1.5rem;background:#141518;border-bottom:1px solid #252830;display:flex;justify-content:space-between;align-items:center}
+.chat-header-left{display:flex;align-items:center;gap:.8rem}
+.chat-avatar{width:40px;height:40px;border-radius:50%;background:rgba(232,97,58,.15);border:1px solid rgba(232,97,58,.3);display:flex;align-items:center;justify-content:center}
+.chat-name{font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:500;color:#F5F0EB}
+.chat-status{font-size:.6rem;color:#3FB950;display:flex;align-items:center;gap:4px;margin-top:2px}
+.chat-status::before{content:'';width:5px;height:5px;border-radius:50%;background:#3FB950;display:inline-block}
+
+.messages{flex:1;overflow-y:auto;padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+.messages::-webkit-scrollbar{width:4px}
+.messages::-webkit-scrollbar-track{background:transparent}
+.messages::-webkit-scrollbar-thumb{background:#252830;border-radius:2px}
+
+.msg{display:flex;max-width:85%}
+.msg.user{align-self:flex-end}
+.msg.assistant{align-self:flex-start}
+.msg-bubble{padding:.8rem 1.1rem;font-size:.85rem;line-height:1.7;font-weight:300}
+.msg.user .msg-bubble{background:#E8613A;color:#fff;border-radius:14px 14px 3px 14px}
+.msg.assistant .msg-bubble{background:#141518;color:#B1BAC4;border:1px solid #252830;border-radius:14px 14px 14px 3px}
+.msg.assistant .msg-bubble strong{color:#F5F0EB;font-weight:600}
+.msg.assistant .msg-bubble a{color:#E8613A;text-decoration:underline;text-underline-offset:3px}
+.msg-bubble p{margin-bottom:.5rem}
+.msg-bubble p:last-child{margin-bottom:0}
+
+.typing{display:flex;gap:4px;align-items:center;padding:.8rem 1.1rem;background:#141518;border:1px solid #252830;border-radius:14px 14px 14px 3px;align-self:flex-start}
+.typing span{width:6px;height:6px;border-radius:50%;background:#7D8590;animation:pulse 1.2s ease-in-out infinite}
+.typing span:nth-child(2){animation-delay:.15s}
+.typing span:nth-child(3){animation-delay:.3s}
+@keyframes pulse{0%,80%,100%{opacity:.3;transform:scale(.8)}40%{opacity:1;transform:scale(1)}}
+
+.quick-actions{padding:0 1.5rem 1rem;display:flex;gap:.5rem;flex-wrap:wrap}
+.quick-btn{padding:.5rem .8rem;font-size:.7rem;background:transparent;border:1px solid #252830;color:#B1BAC4;cursor:pointer;font-family:inherit;transition:all .2s;border-radius:3px}
+.quick-btn:hover{border-color:#E8613A;color:#E8613A}
+
+.input-bar{padding:1rem 1.5rem;background:#141518;border-top:1px solid #252830;display:flex;gap:.6rem}
+.input-bar input{flex:1;padding:.7rem 1rem;background:rgba(255,255,255,.04);border:1px solid #252830;color:#F5F0EB;font-size:.85rem;font-family:inherit;outline:none;border-radius:3px}
+.input-bar input:focus{border-color:#E8613A}
+.input-bar input::placeholder{color:rgba(255,255,255,.2)}
+.send-btn{padding:.7rem 1.2rem;background:#E8613A;border:none;color:#fff;cursor:pointer;border-radius:3px;display:flex;align-items:center;transition:background .2s}
+.send-btn:hover{background:#d4532e}
+.send-btn:disabled{background:rgba(127,133,144,.2);cursor:default}
+
+.footer-note{padding:.4rem 1.5rem;text-align:center;font-size:.55rem;color:rgba(127,133,144,.4);background:#141518;border-top:1px solid rgba(37,40,48,.4)}
+
+.test-scenarios{position:fixed;top:36px;right:0;width:280px;height:calc(100vh - 36px);background:#141518;border-left:1px solid #252830;padding:1rem;overflow-y:auto;display:none}
+.test-scenarios.open{display:block}
+.test-scenarios h3{font-family:'Playfair Display',Georgia,serif;font-size:.85rem;color:#F5F0EB;margin-bottom:1rem;font-weight:500}
+.test-cat{margin-bottom:1rem}
+.test-cat h4{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#C8A96E;margin-bottom:.5rem}
+.test-item{font-size:.7rem;color:#7D8590;padding:.4rem .6rem;cursor:pointer;transition:all .2s;border-left:2px solid transparent;margin-bottom:2px}
+.test-item:hover{color:#E8613A;border-color:#E8613A;background:rgba(232,97,58,.05)}
+
+.toggle-tests{position:fixed;top:44px;right:8px;z-index:10001;padding:.3rem .6rem;font-size:.55rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:#141518;border:1px solid #252830;color:#7D8590;cursor:pointer;font-family:inherit}
+.toggle-tests:hover{color:#E8613A;border-color:#E8613A}
+
+@media(max-width:900px){
+  .test-scenarios{display:none!important}
+  .toggle-tests{display:none}
+  .chat-container{max-width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="staging-bar">
+  <div>⚠ STAGING — TIL Concierge Testing</div>
+  <span>Not public. Test freely.</span>
+</div>
+
+<button class="toggle-tests" id="toggleTests" onclick="toggleTestPanel()">Test Scenarios</button>
+
+<div class="chat-container" id="chatContainer">
+  <div class="chat-header">
+    <div class="chat-header-left">
+      <div class="chat-avatar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8613A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div>
+        <div class="chat-name">TIL Concierge</div>
+        <div class="chat-status">Online</div>
+      </div>
+    </div>
+    <button onclick="resetChat()" style="background:none;border:1px solid #252830;color:#7D8590;padding:.3rem .6rem;font-size:.6rem;cursor:pointer;font-family:inherit;letter-spacing:.1em;text-transform:uppercase">Reset</button>
+  </div>
+
+  <div class="messages" id="messages"></div>
+
+  <div class="quick-actions" id="quickActions">
+    <button class="quick-btn" onclick="sendQuick('What trips are available?')">What's available?</button>
+    <button class="quick-btn" onclick="sendQuick('What\\'s included in the price?')">What's included?</button>
+    <button class="quick-btn" onclick="sendQuick('How do I get there?')">How to get there</button>
+    <button class="quick-btn" onclick="sendQuick('Tell me about the surf breaks')">The surf</button>
+    <button class="quick-btn" onclick="sendQuick('I\\'m interested in booking for a group of 4')">Group of 4</button>
+  </div>
+
+  <div class="input-bar">
+    <input type="text" id="userInput" placeholder="Ask about trips, pricing, availability..." onkeydown="if(event.key==='Enter')sendMessage()">
+    <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+  <div class="footer-note">Telo Island Lodge · A Pegasus Lodges Property</div>
+</div>
+
+<div class="test-scenarios" id="testPanel">
+  <h3>Test Scenarios</h3>
+  <div class="test-cat">
+    <h4>New Inquiry</h4>
+    <div class="test-item" onclick="sendQuick('Hi, I saw your lodge online. What is this place?')">Cold — "What is this place?"</div>
+    <div class="test-item" onclick="sendQuick('How much does a trip cost?')">Price question</div>
+    <div class="test-item" onclick="sendQuick('What dates do you have open in May or June?')">Availability check</div>
+    <div class="test-item" onclick="sendQuick('We are a group of 6 friends looking at July. What do you have?')">Group inquiry</div>
+  </div>
+  <div class="test-cat">
+    <h4>Detailed Questions</h4>
+    <div class="test-item" onclick="sendQuick('I\\'m an intermediate surfer. Will I enjoy the waves there?')">Skill level</div>
+    <div class="test-item" onclick="sendQuick('My wife doesn\\'t surf. Will she be bored?')">Non-surfer spouse</div>
+    <div class="test-item" onclick="sendQuick('How do I get there from the US? What flights?')">Travel logistics</div>
+    <div class="test-item" onclick="sendQuick('What\\'s the difference between peak and shoulder season?')">Pricing/season</div>
+    <div class="test-item" onclick="sendQuick('Do you have surfboard rentals? What boards?')">Board rentals</div>
+    <div class="test-item" onclick="sendQuick('What\\'s the cancellation policy?')">Cancellation</div>
+    <div class="test-item" onclick="sendQuick('Do I need a visa for Indonesia?')">Visa question</div>
+  </div>
+  <div class="test-cat">
+    <h4>Returning Guest</h4>
+    <div class="test-item" onclick="sendQuick('Hey, I\\'ve been to TIL twice before. Do you have any loyalty discounts?')">Repeat guest discount</div>
+    <div class="test-item" onclick="sendQuick('I came last August and loved it. What\\'s open for this year?')">Rebooking</div>
+  </div>
+  <div class="test-cat">
+    <h4>Edge Cases</h4>
+    <div class="test-item" onclick="sendQuick('I want to book the whole lodge for 9 people. What\\'s the deal?')">Lodge buyout</div>
+    <div class="test-item" onclick="sendQuick('Can I come in December or January?')">Off-season request</div>
+    <div class="test-item" onclick="sendQuick('How does this compare to Kandui or Nihi Sumba?')">Competitor comparison</div>
+    <div class="test-item" onclick="sendQuick('Can I speak with someone? I have some specific questions.')">Escalation request</div>
+    <div class="test-item" onclick="sendQuick('I want a refund for my cancelled trip.')">Refund request</div>
+    <div class="test-item" onclick="sendQuick('Is the lodge eco-friendly? What do you do for the local community?')">Sustainability/community</div>
+    <div class="test-item" onclick="sendQuick('What\\'s the WiFi like? Can I work remotely from there?')">Digital nomad</div>
+  </div>
+  <div class="test-cat">
+    <h4>Stress Tests</h4>
+    <div class="test-item" onclick="sendQuick('This seems really expensive. Why should I pay $6000?')">Price objection</div>
+    <div class="test-item" onclick="sendQuick('I read some bad reviews about this place.')">Negative review</div>
+    <div class="test-item" onclick="sendQuick('Is it safe? I\\'m worried about being in a remote area.')">Safety concern</div>
+    <div class="test-item" onclick="sendQuick('Can you give me a deal? I\\'m a travel influencer with 50K followers.')">Influencer discount</div>
+  </div>
+</div>
+
+<script>
+const SYSTEM_PROMPT = `You are the TIL Concierge, the AI booking assistant for Telo Island Lodge — a luxury surf resort in the Telo Islands, North Sumatra, Indonesia. You help potential guests learn about the lodge, check availability, get pricing, and move toward booking.
+
+## YOUR PERSONALITY
+- Warm, knowledgeable, enthusiastic about surfing and the Telo Islands
+- Professional but not corporate — like a well-traveled friend who knows everything about this place
+- You mirror Elle Hall's communication style: opens with "Hey" or "Hi", direct, action-oriented, genuinely excited about the product
+- You use short paragraphs. Never walls of text.
+- You naturally weave in details that build the dream — the crystal-clear water, the uncrowded lineups, the fresh seafood
+- You're honest about limitations — if a trip is sold out, you say so and offer alternatives
+- NEVER fabricate information. If you don't know something, say "Let me connect you with Elle, our booking manager, who can help with that"
+
+## THE LODGE
+Telo Island Lodge (TIL) is a boutique all-inclusive surf resort on a private island in the Telo archipelago, ~130km off North Sumatra, Indonesia. Operated by Pegasus Lodges since 2009.
+
+**Accommodation:**
+- 5 rooms total, maximum 9 guests per trip
+- 2 Overwater Bungalows (double occupancy, king bed, ensuite, A/C)
+- 2 Beachfront Lodge Rooms (double occupancy, king bed, ensuite, A/C)
+- 1 Waterfront Triple Room (up to 3 guests)
+- Daily housekeeping, complimentary laundry
+- Double occupancy standard. Single supplement available.
+
+**All-Inclusive Package Covers:**
+- Private room with ensuite, A/C, king bed
+- Three meals daily — fresh seafood, Indonesian-inspired cuisine, tropical fruits, dietary requirements accommodated
+- Unlimited speedboat surf transfers to 20+ breaks
+- Expert surf guides (Dingo is head guide — legendary local knowledge)
+- Snorkel, SUP, fishing gear included
+- Return private charter flight: Padang (PDG) to Telo Islands (~90 min each way)
+- Meet-and-greet, porters, ground transfers in Padang
+- WiFi (24/7)
+
+**NOT included (optional extras):**
+- Bar tab (spirits, beer, wine)
+- Massage therapy
+- Lost Surfboard rentals ($400/trip pre-book, $500 at lodge)
+- Single supplement for solo room occupancy
+
+## 2026 SEASON & PRICING
+Season runs March through October. Lodge closed November-February for maintenance.
+
+**Rates:**
+- Shoulder season (March, April, September, October): $594/night per person
+- Peak season (May, June, July, August): $660/night per person
+- All rates are per person, all-inclusive
+- 7-11 night trips
+
+**Discounts:**
+- Repeat guest (2nd trip): 5% off
+- Loyal guest (3rd+ trip): 10% off
+- Lodge buyout (book all 5 rooms): 50% off 5th room
+- Last-minute (30 days out, spots remaining): 20% off
+
+## 2026 TRIP AVAILABILITY
+
+| Trip | Dates | Nights | Rate | Availability | Booking URL |
+|------|-------|--------|------|-------|------------------|
+| 2 | Mar 8-15 | 7 | $594 | SOLD OUT | telo-island-lodge-1 |
+| 3 | Mar 15-26 | 11 | $594 | 5 spots | telo-island-lodge-45 |
+| 4 | Mar 26-Apr 5 | 10 | $594 | SOLD OUT | telo-island-lodge-46 |
+| 5 | Apr 5-15 | 10 | $594 | 5 spots | telo-island-lodge-48 |
+| 6 | Apr 15-25 | 10 | $594 | 8 spots | telo-island-lodge-47 |
+| 7 | Apr 25-May 5 | 10 | $594 | SOLD OUT | telo-island-lodge-49 |
+| 8 | May 5-15 | 10 | $660 | 4 spots | telo-island-lodge-68 |
+| 9 | May 15-22 | 7 | $660 | 1 spot | telo-island-lodge-50 |
+| 10 | May 22-Jun 1 | 10 | $660 | SOLD OUT | telo-island-lodge-51 |
+| 11 | Jun 1-11 | 10 | $660 | SOLD OUT | telo-island-lodge-52 |
+| 12 | Jun 11-19 | 8 | $660 | SOLD OUT | telo-island-lodge-53 |
+| 13 | Jun 19-29 | 10 | $660 | 4 spots | telo-island-lodge-54 |
+| 14 | Jun 29-Jul 9 | 10 | $660 | SOLD OUT | telo-island-lodge-55 |
+| 15 | Jul 9-16 | 7 | $660 | 3 spots | telo-island-lodge-56 |
+| 16 | Jul 16-24 | 8 | $660 | SOLD OUT | telo-island-lodge-57 |
+| 17 | Jul 24-Aug 3 | 10 | $660 | SOLD OUT | telo-island-lodge-58 |
+| 18 | Aug 3-13 | 10 | $660 | SOLD OUT | telo-island-lodge-59 |
+| 19 | Aug 13-23 | 10 | $660 | SOLD OUT | telo-island-lodge-60 |
+| 20 | Aug 23-Sep 2 | 10 | $660 | SOLD OUT | telo-island-lodge-61 |
+| 21 | Sep 2-12 | 10 | $594 | SOLD OUT | telo-island-lodge-62 |
+| 22 | Sep 12-22 | 10 | $594 | SOLD OUT | telo-island-lodge-63 |
+| 23 | Sep 22-Oct 2 | 10 | $594 | SOLD OUT | telo-island-lodge-64 |
+| 24 | Oct 2-12 | 10 | $594 | 9 spots | telo-island-lodge-65 |
+| 25 | Oct 12-19 | 7 | $594 | SOLD OUT | telo-island-lodge-66 |
+| 26 | Oct 19-29 | 10 | $594 | 9 spots | telo-island-lodge-67 |
+
+When recommending available trips, include: dates, number of nights, nightly rate, total price (rate x nights), spots remaining, and a booking link formatted as: https://bookings.pegasuslodges.com/en/product/[URL from table]
+
+For sold-out trips, offer the waitlist and suggest the nearest available alternative dates.
+
+## THE SURF
+20+ breaks within 25 minutes by boat. March-October season. Waves range 3-8 feet.
+
+**Signature Breaks:**
+- Max's Right — world-class right-hander, TIL's crown jewel. All levels.
+- GT's — fast, hollow left. Intermediate+.
+- Le Ba — long, playful right. Perfect for all levels.
+- Churches — powerful right reef break. Advanced.
+- The Bubble — fun, rippable right. All levels.
+- Kindy's — mellow, beginner-friendly right.
+- Schoolyards — consistent, all-rounder.
+- Pinnacles — left and right peaks. Intermediate.
+- E.R. — fast, shallow right. Advanced only.
+
+**Surf Guide:** Dingo (head guide) — 15+ years guiding the Telos. Matches guests to breaks based on ability and conditions. Max boat ride is 25 minutes.
+
+**Board Rentals:** Lost Surfboards quiver available. $400/trip pre-booked, $500 at lodge. Models: El Patron, Crowd Killer, Puddle Jumper HP, RNF Redux.
+
+## GETTING THERE
+1. Fly international to Jakarta (CGK) or direct to Padang (PDG) if available
+2. Connect to Padang (PDG) via Garuda, AirAsia, or Super Air Jet
+3. Overnight at The Mercure hotel in Padang (arranged by TIL)
+4. Next morning: private charter flight Padang to Telo Islands (~90 min)
+5. Speedboat transfer to the lodge
+
+**Requirements:**
+- Passport valid 6+ months
+- Indonesia visa-on-arrival (30 days, sufficient for trip)
+- Medical evacuation insurance REQUIRED (Global Rescue recommended)
+- Max 2 surfboards, 100-120kg total weight limit for charter
+- Send passport copy to support@pegasuslodges.com before trip
+
+## SIBARANUN VILLAGE & COMMUNITY
+TIL has a 15+ year relationship with the local Sibaranun Village. The lodge employs local staff, supports the village school (classroom construction, learning materials), and facilitates a mask-making workshop with Mama Bella that provides direct economic support. Guests can visit the village by bike — it's one of the highlights of any trip.
+
+## CONVERSATION RULES
+
+1. **Be helpful and move toward booking.** Answer questions AND guide people toward choosing a trip. Ask follow-ups: "When were you thinking of coming?" "How many in your group?" "What's your surf level?"
+
+2. **Capture contact info naturally.** After 2-3 exchanges, if they seem interested: "I'd love to send you the full trip details — what's the best email?" Don't force it.
+
+3. **Quote prices proactively.** When someone asks about a specific trip, give the total: "$594/night x 10 nights = $5,940 per person, all-inclusive."
+
+4. **Create urgency naturally.** "We only take 9 guests per trip, and this one has 4 spots left" — factual, not pushy.
+
+5. **Recommend based on needs:**
+   - Budget-conscious → shoulder season ($594/night)
+   - Best waves → May-August
+   - First-timers → highlight guiding, variety, all-inclusive
+   - Groups → lodge buyout for 9 PAX
+   - Non-surfers → fishing, snorkeling, SUP, massage, village tour
+
+6. **Escalation triggers — connect to Elle for:**
+   - Group bookings 6+ people
+   - Payment disputes or refund requests
+   - Dates outside published schedule
+   - Corporate retreats or special events
+   - Anything you're not confident about
+   - When they say "Can I speak to someone?"
+   Say: "Let me connect you with Elle, our booking manager. What's the best email? She'll be in touch within 24 hours."
+
+7. **Never:**
+   - Make up availability — use ONLY the data above
+   - Promise discounts beyond what's listed
+   - Share internal business information
+   - Badmouth competitors
+   - Use aggressive sales tactics
+
+8. **Formatting:** Keep responses SHORT. 2-4 short paragraphs max. Use **bold** for key details. Include booking links when relevant.`;
+
+let messages = [];
+let isLoading = false;
+
+function addMessage(role, content) {
+  messages.push({ role, content });
+  renderMessages();
+}
+
+function renderMessages() {
+  const container = document.getElementById('messages');
+  container.innerHTML = messages.map((m, i) => {
+    const formatted = m.role === 'assistant' ? formatText(m.content) : escapeHtml(m.content);
+    return `<div class="msg ${m.role}"><div class="msg-bubble">${formatted}</div></div>`;
+  }).join('');
+  
+  if (isLoading) {
+    container.innerHTML += '<div class="typing"><span></span><span></span><span></span></div>';
+  }
+  
+  container.scrollTop = container.scrollHeight;
+  
+  // Hide quick actions after first user message
+  if (messages.filter(m => m.role === 'user').length > 0) {
+    document.getElementById('quickActions').style.display = 'none';
+  }
+}
+
+function formatText(text) {
+  // Paragraphs
+  let html = text.split(/\n\n+/).map(p => {
+    // Bold
+    p = p.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    // Links
+    p = p.replace(/(https:\/\/bookings\.pegasuslodges\.com\/[^\s)]+)/g, '<a href="$1" target="_blank">Book this trip →</a>');
+    // Single newlines to <br>
+    p = p.replace(/\n/g, '<br>');
+    return `<p>${p}</p>`;
+  }).join('');
+  return html;
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+async function sendMessage() {
+  const input = document.getElementById('userInput');
+  const text = input.value.trim();
+  if (!text || isLoading) return;
+  
+  input.value = '';
+  addMessage('user', text);
+  
+  isLoading = true;
+  renderMessages();
+  document.getElementById('sendBtn').disabled = true;
+  
+  try {
+    const apiMessages = messages.map(m => ({ role: m.role, content: m.content }));
+    
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYSTEM_PROMPT,
+        messages: apiMessages,
+      }),
+    });
+    
+    const data = await response.json();
+    const reply = data.content?.filter(b => b.type === 'text').map(b => b.text).join('\n')
+      || "I'm having trouble connecting. Please try again or email info@teloislandlodge.com.";
+    
+    isLoading = false;
+    addMessage('assistant', reply);
+  } catch (err) {
+    console.error('API error:', err);
+    isLoading = false;
+    addMessage('assistant', "Connection issue — please try again or email info@teloislandlodge.com.");
+  }
+  
+  document.getElementById('sendBtn').disabled = false;
+  document.getElementById('userInput').focus();
+}
+
+function sendQuick(text) {
+  document.getElementById('userInput').value = text;
+  sendMessage();
+}
+
+function resetChat() {
+  messages = [];
+  document.getElementById('quickActions').style.display = 'flex';
+  addMessage('assistant', "Hey! Welcome to Telo Island Lodge. I'm here to help you find the perfect surf trip — whether you're checking dates, want to know what's included, or you're ready to book. What can I help you with?");
+}
+
+function toggleTestPanel() {
+  const panel = document.getElementById('testPanel');
+  const container = document.getElementById('chatContainer');
+  panel.classList.toggle('open');
+  if (panel.classList.contains('open')) {
+    container.style.maxWidth = 'calc(100% - 280px)';
+    container.style.marginRight = '280px';
+    container.style.marginLeft = '0';
+  } else {
+    container.style.maxWidth = '600px';
+    container.style.marginRight = 'auto';
+    container.style.marginLeft = 'auto';
+  }
+}
+
+// Init
+addMessage('assistant', "Hey! Welcome to Telo Island Lodge. I'm here to help you find the perfect surf trip — whether you're checking dates, want to know what's included, or you're ready to book. What can I help you with?");
+</script>
+</body>
+</html>
