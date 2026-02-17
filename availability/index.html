@@ -103,6 +103,19 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:1.5rem clamp(1.5r
 .modal-success{display:none;text-align:center;padding:1rem 0}
 .modal-success p{color:var(--green);font-weight:500;font-size:.9rem}
 
+/* ── Form States (T5) ── */
+.form-loading{position:relative;pointer-events:none;opacity:.6}
+.form-loading::after{content:'';position:absolute;top:50%;left:50%;width:24px;height:24px;margin:-12px 0 0 -12px;border:2px solid rgba(255,255,255,.15);border-top-color:var(--ember);border-radius:50%;animation:spin .6s linear infinite;z-index:10}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-loading{position:relative;color:transparent!important;pointer-events:none}
+.btn-loading::after{content:'';position:absolute;top:50%;left:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite}
+.form-error{margin-top:.6rem;padding:.6rem 1rem;background:rgba(232,97,58,.1);border:1px solid rgba(232,97,58,.25);color:var(--ember);font-size:.8rem;font-weight:400;display:none}
+.form-error.visible{display:block}
+.inquiry-success{display:none;text-align:center;padding:2rem 0}
+.inquiry-success p{color:var(--green);font-weight:500;font-size:.95rem}
+.inquiry-success .sub{color:rgba(255,255,255,.4);font-weight:300;font-size:.85rem;margin-top:.3rem}
+.field-error{border-color:var(--ember)!important}
+
 footer{padding:3.5rem 0;background:#050506}
 .footer-inner{text-align:center}
 .footer-links{margin-bottom:1rem}
@@ -194,13 +207,18 @@ footer{padding:3.5rem 0;background:#050506}
 <section class="inquiry" id="inquiry">
   <h2>Have Questions?</h2>
   <p>Not ready to book? Send us an inquiry and we'll get back to you within 24 hours.</p>
-  <div class="inquiry-form">
-    <input type="text" placeholder="Full Name">
-    <input type="email" placeholder="Email">
-    <select><option value="">Preferred Month</option><option>March 2026</option><option>April 2026</option><option>May 2026</option><option>June 2026</option><option>July 2026</option><option>August 2026</option><option>September 2026</option><option>October 2026</option><option>2027 Season</option></select>
-    <select><option value="">Guests</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select>
-    <textarea class="full" rows="3" placeholder="Questions, skill level, special requests..."></textarea>
-    <button type="button">Send Inquiry</button>
+  <div class="inquiry-form" id="inquiryForm">
+    <input type="text" id="inqName" placeholder="Full Name" required>
+    <input type="email" id="inqEmail" placeholder="Email" required>
+    <select id="inqDates"><option value="">Preferred Month</option><option>March 2026</option><option>April 2026</option><option>May 2026</option><option>June 2026</option><option>July 2026</option><option>August 2026</option><option>September 2026</option><option>October 2026</option><option>2027 Season</option></select>
+    <select id="inqGroupSize"><option value="">Guests</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select>
+    <textarea class="full" id="inqMessage" rows="3" placeholder="Questions, skill level, special requests..."></textarea>
+    <div class="form-error full" id="inquiryError"></div>
+    <button type="button" id="inquiryBtn" onclick="submitInquiry()">Send Inquiry</button>
+  </div>
+  <div class="inquiry-success" id="inquirySuccess">
+    <p>Got it — we'll be in touch within 24 hours.</p>
+    <p class="sub">Check your email for a confirmation.</p>
   </div>
 </section>
 
@@ -211,13 +229,14 @@ footer{padding:3.5rem 0;background:#050506}
       <h3>Join the Waitlist</h3>
       <p>We'll notify you if a spot opens on <span class="trip-ref" id="waitlistTrip"></span>. Cancellations happen — be first in line.</p>
       <div class="modal-form">
-        <input type="text" id="wlName" placeholder="Full Name">
-        <input type="email" id="wlEmail" placeholder="Email">
+        <input type="text" id="wlName" placeholder="Full Name" required>
+        <input type="email" id="wlEmail" placeholder="Email" required>
         <input type="hidden" id="wlTripId">
-        <button onclick="submitWaitlist()">Join Waitlist</button>
+        <div class="form-error" id="waitlistError"></div>
+        <button id="wlBtn" onclick="submitWaitlist()">Join Waitlist</button>
       </div>
     </div>
-    <div class="modal-success" id="waitlistSuccess"><p>You're on the list. We'll be in touch if a spot opens.</p></div>
+    <div class="modal-success" id="waitlistSuccess"><p>You're on the list. We'll email you if a spot opens.</p></div>
   </div>
 </div>
 
@@ -229,6 +248,12 @@ footer{padding:3.5rem 0;background:#050506}
 </footer>
 
 <script>
+/* ═══════════════════════════════════════════════════════
+   TIL Availability — Thread 5: Form Wiring
+   Worker: til-concierge-api.aaron-795.workers.dev
+   ═══════════════════════════════════════════════════════ */
+
+const WORKER_BASE = 'https://til-concierge-api.aaron-795.workers.dev';
 const BL_BASE = 'https://bookings.pegasuslodges.com/en/product/telo-island-lodge-';
 
 // Actual BookingLayer product IDs mapped to trip numbers
@@ -262,6 +287,7 @@ const TRIPS = [
   {trip:26,month:"Oct",dates:"Oct 19 – 29",len:10,avail:9,rate:594,status:"open"},
 ];
 
+/* ── Trip Rendering ── */
 function renderTrips(trips) {
   const list = document.getElementById('tripList');
   if (!trips.length) {
@@ -305,29 +331,155 @@ function resetFilters() {
   filterTrips();
 }
 
+/* ── Utility: Simple email validation ── */
+function isValidEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+/* ── Utility: Show error on a form ── */
+function showError(errorId, msg) {
+  const el = document.getElementById(errorId);
+  el.textContent = msg;
+  el.classList.add('visible');
+}
+function clearError(errorId) {
+  const el = document.getElementById(errorId);
+  el.textContent = '';
+  el.classList.remove('visible');
+}
+
+/* ── Utility: Set loading state on button ── */
+function setLoading(btnId, loading) {
+  const btn = document.getElementById(btnId);
+  if (loading) {
+    btn.classList.add('btn-loading');
+    btn.disabled = true;
+  } else {
+    btn.classList.remove('btn-loading');
+    btn.disabled = false;
+  }
+}
+
+/* ══════════════════════════════════════════
+   WAITLIST MODAL — POST /waitlist
+   ══════════════════════════════════════════ */
 function openWaitlist(tripNum, dates) {
   document.getElementById('waitlistTrip').textContent = `Trip ${tripNum} (${dates})`;
   document.getElementById('wlTripId').value = `Trip ${tripNum} - ${dates}`;
   document.getElementById('waitlistForm').style.display = 'block';
   document.getElementById('waitlistSuccess').style.display = 'none';
+  document.getElementById('wlName').value = '';
+  document.getElementById('wlEmail').value = '';
+  clearError('waitlistError');
+  setLoading('wlBtn', false);
   document.getElementById('waitlistModal').classList.add('active');
+  document.getElementById('wlName').focus();
 }
-function closeWaitlist() { document.getElementById('waitlistModal').classList.remove('active'); }
-function submitWaitlist() {
-  const name = document.getElementById('wlName').value;
-  const email = document.getElementById('wlEmail').value;
-  const trip = document.getElementById('wlTripId').value;
-  if (!name || !email) return;
-  // TODO: Wire to Mailchimp API with waitlist tag + trip tag
-  document.getElementById('waitlistForm').style.display = 'none';
-  document.getElementById('waitlistSuccess').style.display = 'block';
-  const s = encodeURIComponent(`Waitlist: ${trip}`);
-  const b = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTrip: ${trip}`);
-  window.open(`mailto:info@teloislandlodge.com?subject=${s}&body=${b}`, '_blank');
-  setTimeout(closeWaitlist, 3000);
-}
-document.getElementById('waitlistModal').addEventListener('click', function(e) { if(e.target===this) closeWaitlist(); });
 
+function closeWaitlist() {
+  document.getElementById('waitlistModal').classList.remove('active');
+}
+
+async function submitWaitlist() {
+  const name = document.getElementById('wlName').value.trim();
+  const email = document.getElementById('wlEmail').value.trim();
+  const trip = document.getElementById('wlTripId').value;
+
+  // Clear previous errors
+  clearError('waitlistError');
+  document.getElementById('wlName').classList.remove('field-error');
+  document.getElementById('wlEmail').classList.remove('field-error');
+
+  // Validate
+  if (!name) { document.getElementById('wlName').classList.add('field-error'); showError('waitlistError', 'Please enter your name.'); return; }
+  if (!email || !isValidEmail(email)) { document.getElementById('wlEmail').classList.add('field-error'); showError('waitlistError', 'Please enter a valid email address.'); return; }
+
+  // Loading state
+  setLoading('wlBtn', true);
+
+  try {
+    const res = await fetch(`${WORKER_BASE}/waitlist`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, name, trip })
+    });
+
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.error || `Server error (${res.status})`);
+    }
+
+    // Success
+    document.getElementById('waitlistForm').style.display = 'none';
+    document.getElementById('waitlistSuccess').style.display = 'block';
+    setTimeout(closeWaitlist, 3500);
+
+  } catch (err) {
+    console.error('Waitlist submit error:', err);
+    showError('waitlistError', 'Something went wrong — please try again or email info@teloislandlodge.com directly.');
+    setLoading('wlBtn', false);
+  }
+}
+
+// Close modal on overlay click
+document.getElementById('waitlistModal').addEventListener('click', function(e) { if(e.target===this) closeWaitlist(); });
+// Close modal on Escape
+document.addEventListener('keydown', function(e) { if(e.key==='Escape') closeWaitlist(); });
+
+
+/* ══════════════════════════════════════════
+   INQUIRY FORM — POST /inquiry
+   ══════════════════════════════════════════ */
+async function submitInquiry() {
+  const name = document.getElementById('inqName').value.trim();
+  const email = document.getElementById('inqEmail').value.trim();
+  const dates = document.getElementById('inqDates').value;
+  const groupSize = document.getElementById('inqGroupSize').value;
+  const message = document.getElementById('inqMessage').value.trim();
+
+  // Clear previous errors and highlights
+  clearError('inquiryError');
+  ['inqName','inqEmail'].forEach(id => document.getElementById(id).classList.remove('field-error'));
+
+  // Validate required fields
+  if (!name) { document.getElementById('inqName').classList.add('field-error'); showError('inquiryError', 'Please enter your name.'); return; }
+  if (!email || !isValidEmail(email)) { document.getElementById('inqEmail').classList.add('field-error'); showError('inquiryError', 'Please enter a valid email address.'); return; }
+
+  // Loading state
+  setLoading('inquiryBtn', true);
+
+  try {
+    const res = await fetch(`${WORKER_BASE}/inquiry`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, name, groupSize, dates, message })
+    });
+
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.error || `Server error (${res.status})`);
+    }
+
+    // Success — hide form, show confirmation
+    document.getElementById('inquiryForm').style.display = 'none';
+    document.getElementById('inquirySuccess').style.display = 'block';
+
+  } catch (err) {
+    console.error('Inquiry submit error:', err);
+    showError('inquiryError', 'Something went wrong — please try again or email info@teloislandlodge.com directly.');
+    setLoading('inquiryBtn', false);
+  }
+}
+
+/* ── Clear field-error on input ── */
+document.querySelectorAll('.inquiry-form input, .inquiry-form textarea, .modal-form input').forEach(el => {
+  el.addEventListener('input', function() { this.classList.remove('field-error'); });
+});
+
+/* ── Allow Enter to submit in waitlist modal ── */
+document.querySelectorAll('#wlName, #wlEmail').forEach(el => {
+  el.addEventListener('keydown', function(e) { if(e.key==='Enter') submitWaitlist(); });
+});
+
+/* ── Init ── */
 filterTrips();
 </script>
 </body>
